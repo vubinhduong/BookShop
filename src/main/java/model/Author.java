@@ -6,7 +6,6 @@ public class Author {
 	}
 
 	public Author(String author_id, String book_id, String name, String intro, String image) {
-		super();
 		this.author_id = author_id;
 		this.book_id = book_id;
 		this.name = name;
