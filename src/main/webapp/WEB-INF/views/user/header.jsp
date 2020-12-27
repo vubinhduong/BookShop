@@ -9,27 +9,24 @@
 		<div class="headertop_desc">
 			<div class="call">
 				<p>
-					<span>Need help?</span> call us <span class="number">1-22-3456789</span></span>
+					<span>Cần trợ giúp?</span> Hãy gọi chúng tôi: <span class="number">0396251874</span></span>
 				</p>
 			</div>
 			<div class="account_desc">
 				<ul>
-					<li><a href="#">Register</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Delivery</a></li>
-					<li><a href="#">Checkout</a></li>
-					<li><a href="#">My Account</a></li>
+					<li><a href="#">Đăng kí</a></li>
+					<li><a href="#">Đăng nhập</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				<a href="index.html"><img src="${pageContext.request.contextPath}/resources/user/images/logo.png" alt="" /></a>
 			</div>
 			<div class="cart">
 				<p>
-					Welcome to our Online Store! <span>Cart:</span>
+					<span>Cart:</span>
 				<div id="dd" class="wrapper-dropdown-2">
 					0 item(s) - $0.00
 					<ul class="dropdown">
@@ -72,11 +69,11 @@
 		<div class="header_bottom">
 			<div class="menu">
 				<ul>
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="delivery.html">Delivery</a></li>
-					<li><a href="news.html">News</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li class="active"><a href="homepage.jsp">Trang chủ</a></li>
+					<li><a href="about.html">Đang giảm giá</a></li>
+					<li><a href="delivery.html">Tất cả sách</a></li>
+					<li><a href="news.html">Sách đánh giá cao</a></li>
+					<li><a href="contact.html">Giới thiệu</a></li>
 					<div class="clear"></div>
 				</ul>
 			</div>

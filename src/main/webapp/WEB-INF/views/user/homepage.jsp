@@ -12,10 +12,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 
 <!-- Mirrored from p.w3layouts.com/demos/home_shoppe/web/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Dec 2020 08:53:19 GMT -->
-<
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
-<title>Free Home Shoppe Website Template | Home :: w3layouts</title>
+<title>Nhà sách</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -100,29 +99,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<meta name="robots" content="noindex">
 <body>
-	<link rel="stylesheet" href="../../../demobar_w3_4thDec2019.css">
-	<!-- Demo bar start -->
 	
-
 	<div class="wrap">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<div class="header_bottom_left">
 					<div class="categories">
 						<ul>
-							<h3>Categories</h3>
-							<li><a href="#">Mobile Phones</a></li>
-							<li><a href="#">Desktop</a></li>
-							<li><a href="#">Laptop</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Software</a></li>
-							<li><a href="#">Sports &amp; Fitness</a></li>
-							<li><a href="#">Footwear</a></li>
-							<li><a href="#">Jewellery</a></li>
-							<li><a href="#">Clothing</a></li>
-							<li><a href="#">Home Decor &amp; Kitchen</a></li>
-							<li><a href="#">Beauty &amp; Healthcare</a></li>
-							<li><a href="#">Toys, Kids &amp; Babies</a></li>
+							<h3>Danh mục sản phẩm</h3>
+							<li><a href="#">Sách nước ngoài</a></li>
+							<li><a href="#">Tiểu thuyết</a></li>
+							<li><a href="#">Trinh thám</a></li>
+							<li><a href="#">Ngôn tình</a></li>
+							<li><a href="#">Truyện ngắn</a></li>
+							<li><a href="#">Truyện cười</a></li>
+							<li><a href="#">Truyện tranh</a></li>
+							<li><a href="#">Kiếm hiệp</a></li>
+							<li><a href="#">Khoa học viễn tưởng</a></li>
+							<li><a href="#">Đời thường</a></li>
+							<li><a href="#">Tuổi học trò</a></li>
+							<li><a href="#">Kinh tế</a></li>
 						</ul>
 					</div>
 				</div>
@@ -200,11 +196,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="content">
 				<div class="content_top">
 					<div class="heading">
-						<h3>New Products</h3>
+						<h3>Sách mới</h3>
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">See all Products</a>
+							<a href="#">Xam tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
@@ -236,11 +232,94 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---728x90--->
 
 					<div class="heading">
-						<h3>Feature Products</h3>
+						<h3>Sách bán chạy</h3>
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">See all Products</a>
+							<a href="#">Xem tất cả</a>
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="section group">
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$849.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="images/new-pic2.jpg" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$599.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="images/new-pic4.jpg" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$799.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="images/new-pic3.jpg" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$899.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="content_bottom">
+					<!---728x90--->
+
+					<div class="heading">
+						<h3>Sách ngẫu nhiên </h3>
+					</div>
+					<div class="see">
+						<p>
+							<a href="#">Xem tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
