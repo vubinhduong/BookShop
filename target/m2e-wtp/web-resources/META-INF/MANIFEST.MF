@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: anhsk
 Build-Jdk: 13.0.2
-=======
-Built-By: dell
-Build-Jdk: 15.0.1
->>>>>>> 50fd54a17177d4a9b876138d10cc71cd0b5af9bb
 Created-By: Maven Integration for Eclipse
 
