@@ -7,35 +7,31 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Author;
-public class AuthorService {
-	public static List<Author> getBookAuthor(String id_book){
-		List<Author> author = new ArrayList<Author>();
+import model.Genre;
+
+public class GenreSevice {
+	public static List<Genre> getAll(String bookId){
+		List<Genre> genre = new ArrayList<Genre>();
+		
 		try {
 			Connection connection = JDBCConnection.getJDBCConnection();
 			Statement statement = connection.createStatement();
 			String sql = "select *\r\n" + 
-					"from author, book\r\n" + 
-					"where book.book_id = '" + id_book + "' and author.book_id = book.book_id";
+					"from genre, book \r\n" + 
+					"where book.book_id = '" + bookId + "' and genre.book_id = book.book_id ";
 			ResultSet rs = statement.executeQuery(sql);
 			
 			while(rs.next()) {
-				String author_id = rs.getString("author_id");
+				String genre_id = rs.getString("genre_id");
 				String book_id = rs.getString("book_id");
 				String name = rs.getString("name");
-				String intro = rs.getString("intro");
-				String image = rs.getString("image");
-	
-				Author a = new Author(author_id, book_id, name, intro, image);
-				author.add(a);
-					
+				Genre a = new Genre(genre_id, book_id, name);
+				genre.add(a);
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return author;
+		return genre;
 	}
-
 }

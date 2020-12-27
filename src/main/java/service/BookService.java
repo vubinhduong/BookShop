@@ -22,19 +22,19 @@ public class BookService {
 			while(rs.next()) {
 				String book_id = rs.getString("book_id");
 				String name = rs.getString("Book_name");
-				String genre = rs.getString("genre");
 				int price = rs.getInt("price");
 				int discount = rs.getInt("discount");
 				int pages = rs.getInt("pages");
 				String publisher = rs.getString("publisher");
 				int publisher_year = rs.getInt("publishing_year");
-				int rate = rs.getInt("rate");
+				int purchased = rs.getInt("purchased");
+				int rateturn = rs.getInt("rateturn");
+				float rate = rs.getFloat("rate");
 				String intro = rs.getString("intro");
 				String image = rs.getString("image");
-				System.out.println(book_id+ name+ genre+ price+ discount+ pages+ 
+				System.out.println(book_id+ name + price+ discount+ pages+ 
 						publisher+publisher_year+ rate+ intro+ image);
-				Book a = new Book(book_id, name, genre, price, discount, pages, 
-						publisher,publisher_year, rate, intro, image);
+				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn, rate, intro, image);
 				book.add(a); 
 						
 			}
@@ -54,19 +54,19 @@ public class BookService {
 			while(rs.next()) {
 				String book_id = rs.getString("book_id");
 				String name = rs.getString("Book_name");
-				String genres = rs.getString("genre");
 				int price = rs.getInt("price");
 				int discount = rs.getInt("discount");
 				int pages = rs.getInt("pages");
 				String publisher = rs.getString("publisher");
 				int publisher_year = rs.getInt("publishing_year");
-				int rate = rs.getInt("rate");
+				int purchased = rs.getInt("purchased");
+				int rateturn = rs.getInt("rateturn");
+				float rate = rs.getFloat("rate");
 				String intro = rs.getString("intro");
 				String image = rs.getString("image");
-				System.out.println(book_id+ name+ genres+ price+ discount+ pages+ 
+				System.out.println(book_id+ name + price+ discount+ pages+ 
 						publisher+publisher_year+ rate+ intro+ image);
-				Book a = new Book(book_id, name, genres, price, discount, pages, 
-						publisher,publisher_year, rate, intro, image);
+				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn, rate, intro, image);
 				book.add(a); 
 			}
 			
@@ -86,19 +86,19 @@ public class BookService {
 			while(rs.next()) {
 				String book_id = rs.getString("book_id");
 				String name = rs.getString("Book_name");
-				String genres = rs.getString("genre");
 				int price = rs.getInt("price");
 				int discount = rs.getInt("discount");
 				int pages = rs.getInt("pages");
 				String publisher = rs.getString("publisher");
 				int publisher_year = rs.getInt("publishing_year");
-				int rate = rs.getInt("rate");
+				int purchased = rs.getInt("purchased");
+				int rateturn = rs.getInt("rateturn");
+				float rate = rs.getFloat("rate");
 				String intro = rs.getString("intro");
 				String image = rs.getString("image");
-				System.out.println(book_id+ name+ genres+ price+ discount+ pages+ 
+				System.out.println(book_id+ name + price+ discount+ pages+ 
 						publisher+publisher_year+ rate+ intro+ image);
-				Book a = new Book(book_id, name, genres, price, discount, pages, 
-						publisher,publisher_year, rate, intro, image);
+				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn, rate, intro, image);
 				book.add(a); 
 			}
 			

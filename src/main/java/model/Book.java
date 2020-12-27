@@ -3,19 +3,21 @@ package model;
 import java.util.List;
 
 public class Book {
-	public Book() {	
+	public Book() {
 	}
-	
-	public Book(String book_id, String name, String genre, int price, int discount, int pages, String publisher,
-			int publisher_year, int rate, String intro, String image) {
+
+	public Book(String book_id, String name, int price, int discount, int pages, String publisher, int publisher_year,
+			int purchased, int rateturn, float rate, String intro, String image) {
 		this.book_id = book_id;
 		this.name = name;
-		this.genre = genre;
+		this.genre = service.GenreSevice.getAll(book_id);
 		this.price = price;
 		this.discount = discount;
 		this.pages = pages;
 		this.publisher = publisher;
 		this.publisher_year = publisher_year;
+		this.purchased = purchased;
+		this.rateturn = rateturn;
 		this.rate = rate;
 		this.intro = intro;
 		this.image = image;
@@ -24,17 +26,19 @@ public class Book {
 
 	private String book_id;
 	private String name;
-	private String genre;
+	private List<Genre> genre;
 	private int price;
 	private int discount;
 	private int pages;
 	private String publisher;
 	private int publisher_year;
-	private int rate;
+	private int purchased;
+	private int rateturn;
+	private float rate;
 	private String intro;
 	private String image;
 	private List<Author> author;
-	
+
 	public String getBook_id() {
 		return book_id;
 	}
@@ -51,11 +55,11 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getGenre() {
+	public List<Genre> getGenre() {
 		return genre;
 	}
 
-	public void setGenre(String genre) {
+	public void setGenre(List<Genre> genre) {
 		this.genre = genre;
 	}
 
@@ -99,11 +103,27 @@ public class Book {
 		this.publisher_year = publisher_year;
 	}
 
-	public int getRate() {
+	public int getPurchased() {
+		return purchased;
+	}
+
+	public void setPurchased(int purchased) {
+		this.purchased = purchased;
+	}
+
+	public int getRateturn() {
+		return rateturn;
+	}
+
+	public void setRateturn(int rateturn) {
+		this.rateturn = rateturn;
+	}
+
+	public float getRate() {
 		return rate;
 	}
 
-	public void setRate(int rate) {
+	public void setRate(float rate) {
 		this.rate = rate;
 	}
 
@@ -130,6 +150,5 @@ public class Book {
 	public void setAuthor(List<Author> author) {
 		this.author = author;
 	}
-	
 
 }
