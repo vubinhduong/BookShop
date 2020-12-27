@@ -22,11 +22,10 @@ public class AdminService {
     		query = "SELECT * FROM admin";
     		rs = statement.executeQuery(query);
     		while(rs.next()) {
-    			int admin_id = rs.getInt("admin_id"); 
     			String username = rs.getString("username");
     			String password = rs.getString("password");
     			
-    			Admin a = new Admin(admin_id, username, password);
+    			Admin a = new Admin(username, password);
     		    admin.add(a);
     		}
     	} catch(SQLException e) {
