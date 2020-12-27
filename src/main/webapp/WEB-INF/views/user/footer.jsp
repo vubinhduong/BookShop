@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <!DOCTYPE HTML>
 <head>
@@ -47,17 +48,12 @@
 					<div class="social-icons">
 						<h4>Follow Us</h4>
 						<ul>
-							<li><a href="#" target="_blank"><img
-									src="images/facebook.png" alt="" /></a></li>
-							<li><a href="#" target="_blank"><img
-									src="images/twitter.png" alt="" /></a></li>
-							<li><a href="#" target="_blank"><img
-									src="images/skype.png" alt="" /> </a></li>
-							<li><a href="#" target="_blank"> <img
-									src="images/dribbble.png" alt="" /></a></li>
-							<li><a href="#" target="_blank"> <img
-									src="images/linkedin.png" alt="" /></a></li>
-							<div class="clear"></div>
+							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/facebook.png"/>" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/twitter.png"/>" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/skype.png"/>" alt="" /> </a></li>
+							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/dribbble.png"/>" alt="" /></a></li>
+							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/linkedin.png"/>" alt="" /></a></li>
+							      <div class="clear"></div>		  
 						</ul>
 					</div>
 				</div>

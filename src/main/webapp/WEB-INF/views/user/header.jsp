@@ -69,11 +69,11 @@
 		<div class="header_bottom">
 			<div class="menu">
 				<ul>
-					<li class="active"><a href="homepage.jsp">Trang chủ</a></li>
-					<li><a href="about.html">Đang giảm giá</a></li>
-					<li><a href="delivery.html">Tất cả sách</a></li>
-					<li><a href="news.html">Sách đánh giá cao</a></li>
-					<li><a href="contact.html">Giới thiệu</a></li>
+					<li class="active"><a href="${contextPath}/BookShop/homePage">Trang chủ</a></li>
+					<li><a href="${contextPath}/BookShop/about">Đang giảm giá</a></li>
+					<li><a href="${contextPath}/BookShop/delivery">Tất cả sách</a></li>
+					<li><a href="${contextPath}/BookShop/news">Sách đánh giá cao</a></li>
+					<li><a href="${contextPath}/BookShop/contact">Giới thiệu</a></li>
 					<div class="clear"></div>
 				</ul>
 			</div>

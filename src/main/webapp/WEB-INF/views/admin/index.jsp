@@ -6,6 +6,6 @@
 <head></head>
 <body>
 	<h3>WELCOME PAGE</h3>
-	<a href="${contextPath}/BookShop/toUserPage" > TO USER PAGE </a>
+	<a href="${contextPath}/BookShop/homePage" > TO USER PAGE </a>
 </body>
 </html>

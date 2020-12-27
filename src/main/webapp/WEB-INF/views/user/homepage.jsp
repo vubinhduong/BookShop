@@ -18,23 +18,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-<link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<script type="text/javascript" src="js/startstop-slider.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/css/style.css"/>" media="all" />
+<link href="<c:url value="/resources/user/css/slider.css"/>" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="<c:url value="/resources/user/js/jquery-1.7.2.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/user/js/move-top.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/user/js/easing.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/user/js/startstop-slider.js"/>"></script>
 
-<style type="text/css">
-	<%@ include file="css/style.css"%>
-	<%@ include file="css/slider.css"%>
-</style>
-<script type="text/javascript">
-	<%@ include file="js/jquery-1.7.2.min.js"%>
-	<%@ include file="js/move-top.js"%>
-	<%@ include file="js/easing.js"%>
-	<%@ include file="js/startstop-slider.js"%>
-</script>
 </head>
 <body>
 	<script
@@ -128,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div id="mover">
 								<div id="slide-1" class="slide">
 									<div class="slider-img">
-										<a href="preview.html"><img src="images/slide-1-image.png"
+										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-1-image.png"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="slider-text">
@@ -158,14 +148,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<a href="preview.html" class="button">Shop Now</a>
 									</div>
 									<div class="slider-img">
-										<a href="preview.html"><img src="images/slide-3-image.jpg"
+										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-3-image.jpg"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="clear"></div>
 								</div>
 								<div class="slide">
 									<div class="slider-img">
-										<a href="preview.html"><img src="images/slide-2-image.jpg"
+										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-2-image.jpg"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="slider-text">
@@ -208,7 +198,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="section group">
 				<c:forEach var="item" items="${newProduct}">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="${pageContext.request.contextPath}/resources/user/images/feature-pic1.jpg"
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/feature-pic1.jpg"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">
@@ -243,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="section group">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -260,7 +250,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic2.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -277,7 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic4.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -294,7 +284,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic3.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -326,7 +316,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="section group">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -343,7 +333,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic2.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -360,7 +350,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic4.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">
@@ -377,7 +367,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="images/new-pic3.jpg" alt="" /></a>
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
 						<h2>Lorem Ipsum is simply</h2>
 						<div class="price-details">
 							<div class="price-number">

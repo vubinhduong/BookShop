@@ -14,26 +14,40 @@ import service.BookService;
 public class HomeController {
 	
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
-	public ModelAndView homePage() {
+	public ModelAndView homepage() {
 		ModelAndView mav = new ModelAndView("admin/index"); 
 		return mav;
 	}
 	
-	@RequestMapping(value = "/toUserPage", method = RequestMethod.GET)
-	public ModelAndView toUserPage() {
+	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
+	public ModelAndView homePage() {
 		ModelAndView mav = new ModelAndView("user/homepage"); //sửa từ homepage thành contact thì controller sẽ chuyển thành contact
 		List<Book> listBook = new BookService().getAllBook();
 		mav.addObject("newProduct", listBook);
 		return mav;
 	}
 	
-//	@RequestMapping(value = "/springmvc", method =  RequestMethod.GET)
-//	public ModelAndView springMVCPage() {
-//		ModelAndView mav = new ModelAndView("springmvc");
-//		List<Book> book ;
-//		book = BookService().getAllBook();
-//		mav.addObject(book);
-//		return mav;
-//	}
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public ModelAndView aboutPage() {
+		ModelAndView mav = new ModelAndView("user/about"); 
+		return mav;
+	}
+
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public ModelAndView contactPage() {
+		ModelAndView mav = new ModelAndView("user/contact"); 
+		return mav;
+	}
 	
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
+	public ModelAndView newsPage() {
+		ModelAndView mav = new ModelAndView("user/news"); 
+		return mav;
+	}
+	
+	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
+	public ModelAndView deliveryPage() {
+		ModelAndView mav = new ModelAndView("user/delivery"); 
+		return mav;
+	}
 }
