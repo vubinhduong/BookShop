@@ -23,7 +23,6 @@ public class UserService {
     		query = "SELECT * FROM user";
     		rs = statement.executeQuery(query);
     		while(rs.next()) {
-    			int user_id = rs.getInt("user_id");
     			String username = rs.getString("username");
     			String password = rs.getString("password");
     			String fullname = rs.getString("fullname");
@@ -32,7 +31,7 @@ public class UserService {
     			String email = rs.getString("email");
     			Date birthday = rs.getDate("brithday");
     			
-    			User u = new User(user_id, username, password, fullname, address, phone, email, birthday);
+    			User u = new User(username, password, fullname, address, phone, email, birthday);
     			user.add(u);
     		}
     	} catch(SQLException e) {
@@ -46,9 +45,8 @@ public class UserService {
     		connection = JDBCConnection.getJDBCConnection();
     	   try {
     		   query = "INSERT INTO user(user_id, username, password, fullname, address, phone, email, brithday)"
-                        +" VALUES(?,?,?,?,?,?,?,?)";
+                        +" VALUES(?,?,?,?,?,?,?)";
     		   PreparedStatement ps = connection.prepareStatement(query);
-    		   ps.setInt(1, u.getUser_id());
     		   ps.setString(2, u.getUsername());
     		   ps.setString(3, u.getPassword());
     		   ps.setString(4, u.getFullname());

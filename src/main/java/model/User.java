@@ -4,10 +4,9 @@ import java.util.Date;
 
 public class User {
  
-	public User(int user_id, String username, String password, String fullname, String address, String phone,
+	public User(String username, String password, String fullname, String address, String phone,
 			String email, Date birthday) {
 		super();
-		this.user_id = user_id;
 		this.username = username;
 		this.password = password;
 		this.fullname = fullname;
@@ -17,7 +16,6 @@ public class User {
 		this.birthday = birthday;
 	}
 	
-    private int user_id;
     private String username;
     private String password;
     private String fullname;
@@ -26,12 +24,6 @@ public class User {
     private String email;
     private Date birthday;
     
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
-	}
 	public String getUsername() {
 		return username;
 	}

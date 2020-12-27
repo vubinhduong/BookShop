@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Bac Dung
 Build-Jdk: 13.0.2
+=======
+Built-By: dell
+Build-Jdk: 15.0.1
+>>>>>>> 8977293cf70c4e8ffd47387c1b03f86254a103f0
 Created-By: Maven Integration for Eclipse
 

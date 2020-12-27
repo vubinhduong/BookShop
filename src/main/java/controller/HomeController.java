@@ -21,7 +21,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/toUserPage", method = RequestMethod.GET)
 	public ModelAndView toUserPage() {
-		ModelAndView mav = new ModelAndView("user/homepage"); 
+		ModelAndView mav = new ModelAndView("user/homepage"); //sửa từ homepage thành contact thì controller sẽ chuyển thành contact
 		List<Book> listBook = new BookService().getAllBook();
 		mav.addObject("newProduct", listBook);
 		return mav;
