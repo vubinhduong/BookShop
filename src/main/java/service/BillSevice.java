@@ -38,12 +38,5 @@ public class BillSevice {
 		return bill;
 		
 	}
-	public static void main(String[] args) {
-		BillSevice a = new BillSevice();
-		List<Bill> b = a.getBillAll();
-		if(b == null)
-			System.out.println("thất bại");
-		else
-			System.out.println("thành công");
-	}
+
 }

@@ -108,11 +108,5 @@ public class BookService {
 		}
 		return book;
 	}
-	public static void main(String[] args) {
-		BookService a = new BookService();
-		a.getBookGenre("tieu thuyet");
-		a.getAllBook();
-		a.getBookPrice(2000, 400000);
-	}
 
 }
