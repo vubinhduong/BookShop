@@ -19,7 +19,12 @@ public class Test {
 			System.out.println(i.getGenre_id() + " " + i.getName());
 		}
 		BookService book = new BookService();
-		book.getAllBook();
-		
+//		book.getAllBook();
+//		book.getBoolNew();
+//		book.getAllBook();
+//		book.getBookGenre("Tiểu Thuyết");
+//		book.getBookPrice(25000, 50000);
+//		book.getBookHot();
+		book.getBookRandom();
 	}
 }
