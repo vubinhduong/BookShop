@@ -22,7 +22,7 @@
 		</div>
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.html"><img src="${pageContext.request.contextPath}/resources/user/images/logo.png" alt="" /></a>
+				<a href="/BookShop/homePage"><img src="${pageContext.request.contextPath}/resources/user/images/logo.png" alt="" /></a>
 			</div>
 			<div class="cart">
 				<p>
@@ -70,16 +70,16 @@
 			<div class="menu">
 				<ul>
 					<li class="active"><a href="${contextPath}/BookShop/homePage">Trang chủ</a></li>
-					<li><a href="${contextPath}/BookShop/about">Đang giảm giá</a></li>
+					<li><a href="${contextPath}/BookShop/news">Đang giảm giá</a></li>
 					<li><a href="${contextPath}/BookShop/delivery">Tất cả sách</a></li>
-					<li><a href="${contextPath}/BookShop/news">Sách đánh giá cao</a></li>
-					<li><a href="${contextPath}/BookShop/contact">Giới thiệu</a></li>
+					<li><a href="${contextPath}/BookShop/about">Giới thiệu</a></li>
+					<li><a href="${contextPath}/BookShop/contact">Liên lạc</a></li>
 					<div class="clear"></div>
 				</ul>
 			</div>
 			<div class="search_box">
 				<form>
-					<input type="text" value="Search" onfocus="this.value = '';"
+					<input type="text" value="Tìm kiếm" onfocus="this.value = '';"
 						onblur="if (this.value == '') {this.value = 'Search';}"><input
 						type="submit" value="">
 				</form>

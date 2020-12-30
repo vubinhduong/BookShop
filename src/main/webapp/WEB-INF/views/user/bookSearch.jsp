@@ -95,70 +95,77 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header_slide">
 				<jsp:include page="leftmenu.jsp"></jsp:include>
 				<div class="header_bottom_right">
-					<div class="slider">
-						<div id="slider">
-							<div id="mover">
-								<div id="slide-1" class="slide">
-									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-1-image.jpg"/>"
-											alt="learn more" /></a>
-									</div>
-									<div class="slider-text">
-										<h1>HARRY <br>
-											<h1>PORTER</h1>
-										</h1>
-										<h2>Trọn bộ</h2>
-										<div class="features_list">
-											<h2>Giảm giá tới 20%</h2>
-											<br>
-											<h4>Combo Harry Potter Bộ 8 Cuốn</h4>									
-										</div>
-										<a href="preview.html" class="button">Thêm vào giỏ hàng</a>
-									</div>
-									<div class="clear"></div>
-								</div>
-								<div class="slide">
-									<div class="slider-text">
-										<h1>
-											CHRISTMAS EVENT<br>
-											<span>SALE</span>
-										</h1>
-										<h2>UPTo 40% OFF</h2>
-										<div class="features_list">
-											<h4>Cơ hội mua sắm online giá hủy diệt, nhiều khuyến mãi hấp dẫn, miễn phí vận chuyển toàn quốc.</h4>
-											<h4></h4>
-										</div>
-										<a href="preview.html" class="button">Shop Now</a>
-									</div>
-									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-3-image.jpg"/>"
-											alt="learn more" /></a>
-									</div>
-									<div class="clear"></div>
-								</div>
-								<div class="slide">
-									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-2-image.jpg"/>"
-											alt="learn more" /></a>
-									</div>
-									<div class="slider-text">
-										<h1>
-											Clearance<br>
-											<span>SALE</span>
-										</h1>
-										<h2>UPTo 10% OFF</h2>
-										<div class="features_list">
-											<h4>Get to Know More About Our Memorable Services Lorem
-												Ipsum is simply dummy text</h4>
-										</div>
-										<a href="preview.html" class="button">Shop Now</a>
-									</div>
-									<div class="clear"></div>
-								</div>
+					<div class="section group">
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$849.99</span>
+								</p>
 							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
 						</div>
-						<div class="clear"></div>
 					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$599.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$799.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
+						<h2>Lorem Ipsum is simply</h2>
+						<div class="price-details">
+							<div class="price-number">
+								<p>
+									<span class="rupees">$899.99</span>
+								</p>
+							</div>
+							<div class="add-cart">
+								<h4>
+									<a href="preview.html">Add to Cart</a>
+								</h4>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					
+				</div>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -166,210 +173,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="main">
 			<!---728x90--->
 
-			<div class="content">
-				<div class="content_top">
-					<div class="heading">
-						<h3>Sách mới</h3>
-					</div>
-					<div class="see">
-						<p>
-							<a href="#">Xam tất cả</a>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="section group">
-				<c:forEach var="item" items="${newProduct}">
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
-							alt="" /></a>
-						<h2>${item.name}</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">${item.price}</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-
-					</div>
-				</c:forEach>
-				</div>
-				<div class="content_bottom">
-					<!---728x90--->
-
-					<div class="heading">
-						<h3>Sách bán chạy</h3>
-					</div>
-					<div class="see">
-						<p>
-							<a href="#">Xem tất cả</a>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="section group">
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$849.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$599.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$799.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$899.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-				</div>
-				<div class="content_bottom">
-					<!---728x90--->
-
-					<div class="heading">
-						<h3>Sách ngẫu nhiên </h3>
-					</div>
-					<div class="see">
-						<p>
-							<a href="#">Xem tất cả</a>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="section group">
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$849.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$599.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$799.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$899.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
 		</div>
-	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript">
 		$(document).ready(function() {

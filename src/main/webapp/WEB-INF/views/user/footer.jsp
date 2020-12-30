@@ -10,59 +10,43 @@
 		<div class="wrap">
 			<div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Information</h4>
+					<h4>HOME_SHOPPE.COM</h4>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Customer Service</a></li>
-						<li><a href="#">Advanced Search</a></li>
-						<li><a href="delivery.html">Orders and Returns</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="/BookShop/homePage">41 Bạch Mai, Hai Bà Trưng,</a></li>
+						<li><a href="/BookShop/homePage">Hà Nội, Việt Nam</a></li>
 					</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>DỊCH VỤ</h4>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.html">Site Map</a></li>
-						<li><a href="#">Search Terms</a></li>
+						<li><a href="">Điều khoản sử dụng</a></li>
+						<li><a href="contact.html">Hỗ trợ khách hàng</a></li>
+						<li><a href="">Chính sách bảo mật</a></li>
+						<li><a href="delivery.html">Phương thức vận chuyển</a></li>
 					</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>GIỚI THIỆU</h4>
 					<ul>
-						<li><a href="contact.html">Sign In</a></li>
-						<li><a href="index.html">View Cart</a></li>
-						<li><a href="#">My Wishlist</a></li>
-						<li><a href="#">Track My Order</a></li>
-						<li><a href="contact.html">Help</a></li>
+						<li><a href="about.html">Về chúng tôi</a></li>
+						<li><a href="">Hệ thống trung tâm - nhà sách</a></li>
+						<li><a href="/BookShop/homePage">HomeShoppe.com</a></li>
 					</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+					<h4>LIÊN LẠC</h4>
 					<ul>
 						<li><span>+91-123-456789</span></li>
 						<li><span>+00-123-000000</span></li>
 					</ul>
-					<div class="social-icons">
-						<h4>Follow Us</h4>
-						<ul>
-							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/facebook.png"/>" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/twitter.png"/>" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/skype.png"/>" alt="" /> </a></li>
-							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/dribbble.png"/>" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="<c:url value="/resources/user/images/linkedin.png"/>" alt="" /></a></li>
-							      <div class="clear"></div>		  
-						</ul>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 		<div class="copy_right">
 			<p>
-				&copy; 2013 home_shoppe. All rights reserved | Design by <a
-					href="http://w3layouts.com/">W3layouts</a>
+				&copy; 2020 home_shoppe. All rights reserved | Design by <a
+					href="">Project I Teams</a>
 			</p>
 		</div>
 	</div>

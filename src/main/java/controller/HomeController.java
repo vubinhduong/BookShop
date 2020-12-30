@@ -15,7 +15,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homepage() {
-		ModelAndView mav = new ModelAndView("admin/index"); 
+		ModelAndView mav = new ModelAndView("admin/index"); //admin/index
 		return mav;
 	}
 	
@@ -48,6 +48,18 @@ public class HomeController {
 	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView deliveryPage() {
 		ModelAndView mav = new ModelAndView("user/delivery"); 
+		return mav;
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ModelAndView searchPage() {
+		ModelAndView mav = new ModelAndView("user/bookSearch"); 
+		return mav;
+	}
+	
+	@RequestMapping(value = "/preview", method = RequestMethod.GET)
+	public ModelAndView preview() {
+		ModelAndView mav = new ModelAndView("user/preview"); 
 		return mav;
 	}
 }
