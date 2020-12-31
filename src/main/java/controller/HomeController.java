@@ -60,8 +60,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ModelAndView searchPage() {
+	public ModelAndView searchPage(String genre) {
 		ModelAndView mav = new ModelAndView("user/bookSearch"); 
+		List<Book> listGenreBook = new BookService().getBookGenre(genre);
+		mav.addObject("genreProduct", listGenreBook);
 		return mav;
 	}
 	

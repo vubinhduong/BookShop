@@ -33,18 +33,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="categories">
 			<ul>
 				<h3>Danh mục sản phẩm</h3>
-				<li><a href="${contextPath}/BookShop/search">Sách nước ngoài</a></li>
-				<li><a href="${contextPath}/BookShop/search">Tiểu thuyết</a></li>
-				<li><a href="${contextPath}/BookShop/search">Trinh thám</a></li>
-				<li><a href="${contextPath}/BookShop/search">Ngôn tình</a></li>
-				<li><a href="${contextPath}/BookShop/search">Truyện ngắn</a></li>
-				<li><a href="${contextPath}/BookShop/search">Truyện cười</a></li>
-				<li><a href="${contextPath}/BookShop/search">Truyện tranh</a></li>
-				<li><a href="${contextPath}/BookShop/search">Kiếm hiệp</a></li>
-				<li><a href="${contextPath}/BookShop/search">Khoa học viễn tưởng</a></li>
-				<li><a href="${contextPath}/BookShop/search">Đời thường</a></li>
-				<li><a href="${contextPath}/BookShop/search">Tuổi học trò</a></li>
-				<li><a href="${contextPath}/BookShop/search">Kinh tế</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Sách nước ngoài">Sách nước ngoài</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Tiểu thuyết">Tiểu thuyết</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Trinh thám">Trinh thám</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Ngôn tình">Ngôn tình</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Truyện ngắn">Truyện ngắn</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Truyện cười">Truyện cười</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Truyện tranh">Truyện tranh</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Kiếm hiệp">Kiếm hiệp</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Khoa học viễn tưởng">Khoa học viễn tưởng</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Đời thường">Đời thường</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Tuổi học trò">Tuổi học trò</a></li>
+				<li><a href="${contextPath}/BookShop/search.htm?genre=Kinh tế">Kinh tế</a></li>
 			</ul>
 		</div>
 	</div>

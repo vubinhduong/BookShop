@@ -96,13 +96,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<jsp:include page="leftmenu.jsp"></jsp:include>
 				<div class="header_bottom_right">
 					<div class="section group">
+						<c:forEach var="item" items="${genreProduct}" begin="1" end="4" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic1.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
+						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+							alt="" /></a>
+						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
 								<p>
-									<span class="rupees">$849.99</span>
+									<span class="rupees">${item.price}</span>
 								</p>
 							</div>
 							<div class="add-cart">
@@ -112,60 +114,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 							<div class="clear"></div>
 						</div>
+
 					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic2.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$599.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
+				</c:forEach>
 					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic4.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$799.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					<div class="grid_1_of_4 images_1_of_4">
-						<a href="preview.html"><img src="<c:url value="/resources/user/images/new-pic3.jpg"/>" alt="" /></a>
-						<h2>Lorem Ipsum is simply</h2>
-						<div class="price-details">
-							<div class="price-number">
-								<p>
-									<span class="rupees">$899.99</span>
-								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					
-				</div>
 				</div>
 				<div class="clear"></div>
 			</div>
