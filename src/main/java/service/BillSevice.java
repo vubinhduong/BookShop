@@ -35,6 +35,15 @@ public class BillSevice {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return bill;
 		
 	}

@@ -11,9 +11,8 @@ import model.Book;
 public class BookService {
 	private String sql;
 	ResultSet rs;
-	private Connection connection = JDBCConnection.getJDBCConnection();
-	
 	private List<Book> getBook(){
+		Connection connection = JDBCConnection.getJDBCConnection();
 		List<Book> book = new ArrayList<Book>();
 		try {
 			Statement statement = connection.createStatement();
@@ -31,8 +30,8 @@ public class BookService {
 				float rate = rs.getFloat("rate");
 				String intro = rs.getString("intro");
 				String image = rs.getString("image");
-				System.out.println(book_id+ name + price+ discount+ pages+ 
-						publisher+publisher_year+ rate+ intro+ image);
+//				System.out.println(book_id+ name + price+ discount+ pages+ 
+//						publisher+publisher_year+ rate+ intro+ image);
 				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn, rate, intro, image);
 				book.add(a); 
 						
@@ -41,12 +40,21 @@ public class BookService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return book;
 	}
 	
 	// trả về tất cả sách
 	public List<Book> getAllBook(){
-		sql = "SELECT * FROM BOOK";
+		sql = "SELECT * FROM BOOK limit 30";
 		return getBook();
 	}
 	

@@ -12,9 +12,9 @@ import model.Genre;
 public class GenreSevice {
 	public static List<Genre> getAll(String bookId){
 		List<Genre> genre = new ArrayList<Genre>();
+		Connection connection = JDBCConnection.getJDBCConnection();
 		
 		try {
-			Connection connection = JDBCConnection.getJDBCConnection();
 			Statement statement = connection.createStatement();
 			String sql = "select *\r\n" + 
 					"from genre, book \r\n" + 
@@ -31,6 +31,15 @@ public class GenreSevice {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return genre;
 	}

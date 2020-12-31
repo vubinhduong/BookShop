@@ -10,10 +10,11 @@ import java.util.List;
 import model.BillDetail;
 
 public class BillDetailSevice {
-	public static List<BillDetail> getDetail(int billId) {
+	public static List<BillDetail> getDetail(int billId) {	
 		List<BillDetail> billDetail = new ArrayList<BillDetail>();
+		Connection connection = JDBCConnection.getJDBCConnection();
 		try {
-			Connection connection = JDBCConnection.getJDBCConnection();
+
 			String sql = "SELECT * FROM bill_detail WHERE bill_id = " + billId;
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
@@ -29,6 +30,15 @@ public class BillDetailSevice {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return billDetail;
 	}

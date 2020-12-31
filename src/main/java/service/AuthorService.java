@@ -9,10 +9,11 @@ import java.util.List;
 
 import model.Author;
 public class AuthorService {
-	public static List<Author> getBookAuthor(String id_book){
+	public static List<Author> getBookAuthor(String id_book){	
 		List<Author> author = new ArrayList<Author>();
+		Connection connection = JDBCConnection.getJDBCConnection();
 		try {
-			Connection connection = JDBCConnection.getJDBCConnection();
+			
 			Statement statement = connection.createStatement();
 			String sql = "select *\r\n" + 
 					"from author, book\r\n" + 
@@ -34,6 +35,15 @@ public class AuthorService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return author;
 	}
