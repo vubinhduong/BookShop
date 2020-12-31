@@ -136,7 +136,7 @@ public class Book {
 	}
 
 	public String getImage() {
-		return image;
+		return "/resources/user/images/" +  image;
 	}
 
 	public void setImage(String image) {

@@ -22,8 +22,12 @@ public class HomeController {
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		ModelAndView mav = new ModelAndView("user/homepage"); //sửa từ homepage thành contact thì controller sẽ chuyển thành contact
-		List<Book> listBook = new BookService().getAllBook();
-		mav.addObject("newProduct", listBook);
+		List<Book> listNewBook = new BookService().getBoolNew();
+		List<Book> listBestSeller = new BookService().getBookHot();
+		List<Book> listRandomBook = new BookService().getBookRandom();
+		mav.addObject("newProduct", listNewBook);
+		mav.addObject("bestSellerProduct", listBestSeller);
+		mav.addObject("randomProduct", listRandomBook);
 		return mav;
 	}
 	
@@ -42,12 +46,16 @@ public class HomeController {
 	@RequestMapping(value = "/news", method = RequestMethod.GET)
 	public ModelAndView newsPage() {
 		ModelAndView mav = new ModelAndView("user/news"); 
+		List<Book> listSaleBook = new BookService().getAllBook();
+		mav.addObject("saleProduct", listSaleBook);
 		return mav;
 	}
 	
 	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView deliveryPage() {
 		ModelAndView mav = new ModelAndView("user/delivery"); 
+		List<Book> allBook = new BookService().getAllBook();
+		mav.addObject("allProduct", allBook);
 		return mav;
 	}
 	
