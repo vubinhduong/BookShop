@@ -26,5 +26,6 @@ public class Test {
 //		book.getBookPrice(25000, 50000);
 //		book.getBookHot();
 		book.getBookRandom();
+		book.getBookById("a2");
 	}
 }

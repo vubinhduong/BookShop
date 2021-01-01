@@ -60,9 +60,9 @@ public class BookService {
 	
 	// trả về thể loại sách
 	public List<Book> getBookGenre(String genre){
-		sql = "SELECT *\r\n" + 
-				"FROM BOOK, GENRE\r\n" + 
-				"WHERE GENRE.NAME = '" + genre + "' AND BOOK.BOOK_ID = GENRE.BOOK_ID";
+		sql = "select b.book_id, Book_name, price, discount, pages, publisher, publishing_year, purchased, rateturn, rate, intro, image\r\n" + 
+				"from book b, genre g, genrebook gb\r\n" + 
+				"where g.name = '" + genre + "' and g.genre_id = gb.genre_id and b.book_id = gb.book_id";
 		return getBook();
 	}
 	
@@ -76,7 +76,7 @@ public class BookService {
 	public List<Book> getBoolNew(){
 		sql = "SELECT *\r\n" + 
 				"from book\r\n" + 
-				"where year(curdate()) = publishing_year";
+				"where year(curdate()) - 1 = publishing_year";
 		return getBook();
 	}
 	
@@ -95,4 +95,45 @@ public class BookService {
 				"ORDER BY RAND() LIMIT 20";
 		return getBook();
 	}
+	
+	public Book getBookById(String bookid) {
+		sql = "SELECT * FROM BOOK WHERE BOOK_ID = '" + bookid + "'";
+		Connection connection = JDBCConnection.getJDBCConnection();
+		Book book = new Book();
+		try {
+			Statement statement = connection.createStatement();
+			rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				book.setBook_id(rs.getString("book_id"));
+				book.setName(rs.getString("Book_name"));
+				book.setPrice(rs.getInt("price"));
+				book.setDiscount(rs.getInt("discount"));
+				book.setPages(rs.getInt("pages"));
+				book.setPublisher(rs.getString("publisher"));
+				book.setPublisher_year(rs.getInt("publishing_year"));
+				book.setPurchased(rs.getInt("purchased")); 
+				book.setRateturn( rs.getInt("rateturn"));
+				book.setRate(rs.getFloat("rate"));
+				book.setIntro(rs.getString("intro"));
+				book.setImage(rs.getString("image"));
+				System.out.println(rs.getString("book_id"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return book;
+	}
+	
+	
+	
 }
