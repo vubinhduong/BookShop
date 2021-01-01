@@ -10,7 +10,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-
+<%! int size; %> 
 <!-- Mirrored from p.w3layouts.com/demos/home_shoppe/web/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Dec 2020 08:53:19 GMT -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
@@ -95,9 +95,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header_slide">
 				<br>
 				<br>
-				<br>
+				<br>		
+				
+				<%for(int i = 0; i < 100; i+=4) { %> 
 					<div class="section group">
-					<c:forEach var="item" items="${allProduct}">
+					<c:forEach var="item" items="${allProduct}" begin="<%= i %>" end="<%= i+3 %>">
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
@@ -118,6 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</c:forEach>	
 				</div>
+				<%}%>
 				</div>
 				<div class="clear"></div>
 			</div>

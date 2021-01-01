@@ -22,6 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="<c:url value="/resources/user/js/easyResponsiveTabs.js"/>"></script>
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/css/easy-responsive-tabs.css"/>" media="all" />
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/css/global.css"/>" media="all" />
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/css/custom.css"/>" media="all" />
 <script type="text/javascript" src="<c:url value="/resources/user/js/slides.min.jquery.js"/>"></script>
 <script>
 		$(function(){
@@ -98,8 +99,8 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 	<!---728x90--->
 
     	<div class="content_top">
-    		<div class="back-links">
-    		<p><a href="index.html">Home</a> >>>> <a href="#">Electronics</a></p>
+    		<div class="back-links"  style="width: 100%">
+    		<p style="font-size: 16px"><span><a style="font-size: 16px" href="index.html">Home</a></span> > <span><a style="font-size: 16px" href="#">Tiểu thuyết</a></span></p>
     	    </div>
     		<div class="clear"></div>
     	</div>
@@ -108,8 +109,8 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 					<div class="grid images_3_of_2">
 						<div id="container">
 						   <div id="products_example">
-							   <div id="products">
-								<img src="<c:url value="/resources/user/images/book1.jpg"/>"
+							   <div id="products" style="width: 90%; background-color: #eee;">
+								<img src="<c:url value="/resources/user/images/Haivandamduoidaybien.jpg"/>"
 											alt="learn more" />
 							</div>
 						</div>
@@ -120,62 +121,43 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 					<h2 style="color:red">Tôi thấy hoa vàng trên cỏ xanh </h2>
 					<span>
 					<div class="grid images_3_of_2b">
-						<p><h3>Nhà xuất bản: NXB Trẻ></h3></p>
+						<p><h3>Nhà xuất bản: NXB Trẻ</h3></p>
+						<br>
 						<p><h3>Năm xuất bản: 2018</h3></p>
 					</div>
 					</span>
 					<span>
-					<div class="desc span_3_of_2">
-						<p>Nhà xuất bản: NXB Trẻ></p>
-						<p>Số trang: 223</p>
+					<div class="grid images_3_of_2b">
+						<p><h3>Tác giả: Nguyễn Nhật Ánh</h3></p>
+						<br>
+						<p><h3>Số trang: 223</h3></p>
 					</div>
 					</span>
 					<br><br><br>
 					<div class="price">
-						<p><span>Price:  $500</span></p>
+						<p><span>Giá:  153600đ</span></p>
 					</div>
-					<div class="available">
-						<p>Available Options :</p>
-					<ul>
-						<li>Color:
-							<select>
-							<option>Silver</option>
-							<option>Black</option>
-							<option>Dark Black</option>
-							<option>Red</option>
-						</select></li>
-						<li>Size:<select>
-							<option>Large</option>
-							<option>Medium</option>
-							<option>small</option>
-							<option>Large</option>
-							<option>small</option>
-						</select></li>
-						<li>Quality:<select>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select></li>
-					</ul>
+					<div class="available" style="padding: 7px 0px">
+					
 					</div>
 				<div class="share-desc">
-					<div class="share">
-						<p>Share Product :</p>
-						<ul>
-					    	<li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
-					    	<li><a href="#"><img src="images/twitter.png" alt="" /></a></li>					    
-			    		</ul>
-					</div>
-					<div class="button"><span><a href="#">Add to Cart</a></span></div>					
+				<form action="cart" method="get">
+					<input name="number" type="number" style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px">
+					<input type="submit" style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" value="Add to Cart">
+					<br>			
 					<div class="clear"></div>
+				</form>
 				</div>
 				 <div class="wish-list">
 				 	<ul>
-				 		<li class="wish"><a href="#">Add to Wishlist</a></li>
-				 	    <li class="compare"><a href="#">Add to Compare</a></li>
+				 		<li class="wish"><a href="">Sản phẩm chất lượng cao</a></li>
+				 	    <li class="compare"><a href="">Đổi 1-1 nếu khách hàng không hài lòng</a></li>
 				 	</ul>
+				 </div>
+				 <div>
+				 	<br>
+				 	<h3>Thể loại: Romance, Tuổi học trò, Truyện ngắn</h3>
+				 	<br>
 				 </div>
 			</div>
 			<div class="clear"></div>
@@ -186,7 +168,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 			<div id="horizontalTab">
 				<ul class="resp-tabs-list">
 					<li>Giới thiệu sản phẩm</li>
-					<li>product Tags</li>
+					<li>Đánh giá - Bình luận</li>
 					<li>Product Reviews</li>
 					<div class="clear"></div>
 				</ul>
@@ -196,41 +178,50 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 						<p>Tác giả vẫn giữ cách kể chuyện bằng chính giọng trong sáng hồn nhiên của trẻ con. 81 chương ngắn là 81 câu chuyện hấp dẫn với nhiều chi tiết thú vị, cảm động, có những tình tiết bất ngờ, từ đó lộ rõ tính cách người. Cuốn sách, vì thế, có sức ám ảnh.</p>					</div>
 
 				 <div class="product-tags">
-						 <p>aLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-					<h4>Add Your Tags:</h4>
-					<div class="input-box">
-						<input type="text" value="">
-					</div>
-					<div class="button"><span><a href="#">Add Tags</a></span></div>
-			    </div>	
+				 <div class="review">
+					<h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
+					 <ul>
+					 	<li>Price :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/price-rating.png" alt="" /></a></li>
+					 	<li>Value :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/value-rating.png" alt="" /></a></li>
+					 	<li>Quality :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/quality-rating.png" alt="" /></a></li>
+					 </ul>
+					 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+				  <div class="your-review">
+				  	<div class="wish-list">
+				  	  <form>
+					    	<div>
+						    	<span><label>Bình luận<span class="red">*</span></label></span>
+						    	<span><input type="text" value=""></span>
+						    </div>
+						   <div>
+						   		<span><input type="submit" value="Gửi bình luận"></span>
+						  </div>
+					    </form>
+					    </div>
+				  	 </div>	
+				  	 </div>				
+				</div>
 
 				<div class="review">
 					<h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
 					 <ul>
-					 	<li>Price :<a href="#"><img src="images/price-rating.png" alt="" /></a></li>
-					 	<li>Value :<a href="#"><img src="images/value-rating.png" alt="" /></a></li>
-					 	<li>Quality :<a href="#"><img src="images/quality-rating.png" alt="" /></a></li>
+					 	<li>Price :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/price-rating.png" alt="" /></a></li>
+					 	<li>Value :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/value-rating.png" alt="" /></a></li>
+					 	<li>Quality :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/quality-rating.png" alt="" /></a></li>
 					 </ul>
 					 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
 				  <div class="your-review">
-				  	 <h3>How Do You Rate This Product?</h3>
-				  	  <p>Write Your Own Review?</p>
+				   <div class="wish-list">
 				  	  <form>
 					    	<div>
-						    	<span><label>Nickname<span class="red">*</span></label></span>
+						    	<span><label>Bình luận<span class="red">*</span></label></span>
 						    	<span><input type="text" value=""></span>
-						    </div>
-						    <div><span><label>Summary of Your Review<span class="red">*</span></label></span>
-						    	<span><input type="text" value=""></span>
-						    </div>						
-						    <div>
-						    	<span><label>Review<span class="red">*</span></label></span>
-						    	<span><textarea> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="SUBMIT REVIEW"></span>
+						   		<span><input type="submit" value="Gửi bình luận"></span>
 						  </div>
 					    </form>
+					    </div>
 				  	 </div>				
 				</div>
 			</div>

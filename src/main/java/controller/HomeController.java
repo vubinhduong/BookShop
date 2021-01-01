@@ -55,7 +55,9 @@ public class HomeController {
 	public ModelAndView deliveryPage() {
 		ModelAndView mav = new ModelAndView("user/delivery"); 
 		List<Book> allBook = new BookService().getAllBook();
+		int size = allBook.size();
 		mav.addObject("allProduct", allBook);
+		mav.addObject("size", size);
 		return mav;
 	}
 	
@@ -70,6 +72,12 @@ public class HomeController {
 	@RequestMapping(value = "/preview", method = RequestMethod.GET)
 	public ModelAndView preview() {
 		ModelAndView mav = new ModelAndView("user/preview"); 
+		return mav;
+	}
+	
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public ModelAndView cartPage() {
+		ModelAndView mav = new ModelAndView("user/cart"); 
 		return mav;
 	}
 }
