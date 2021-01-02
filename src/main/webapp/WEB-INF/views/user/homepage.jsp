@@ -181,7 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="section group">
 				<c:forEach var="item" items="${newProduct}" begin="1" end="4" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">
@@ -217,7 +217,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="section group">
 				<c:forEach var="item" items="${bestSellerProduct}" begin="1" end="4" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">
@@ -252,7 +252,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="section group">
 					<c:forEach var="item" items="${randomProduct}" begin="1" end="4" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">

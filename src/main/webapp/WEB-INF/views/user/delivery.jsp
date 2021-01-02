@@ -101,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="section group">
 					<c:forEach var="item" items="${allProduct}" begin="<%= i %>" end="<%= i+3 %>">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">

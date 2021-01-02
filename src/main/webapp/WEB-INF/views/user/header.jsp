@@ -26,7 +26,7 @@
 			</div>
 			<div class="cart">
 				<p>
-					<span>Cart:</span>
+					<span><a href="/BookShop/cart">Cart:</a></span>
 				<div id="dd" class="wrapper-dropdown-2">
 					0 item(s) - $0.00
 					<ul class="dropdown">

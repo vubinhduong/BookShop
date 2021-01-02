@@ -1,27 +1,36 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+
 import model.Book;
+import model.Cart;
 import service.BookService;
 
 @Controller
 public class HomeController {
-	
+
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homepage() {
-		ModelAndView mav = new ModelAndView("admin/index"); //admin/index
+		ModelAndView mav = new ModelAndView("admin/index"); // admin/index
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
-		ModelAndView mav = new ModelAndView("user/homepage"); //sửa từ homepage thành contact thì controller sẽ chuyển thành contact
+		ModelAndView mav = new ModelAndView("user/homepage"); // sửa từ homepage thành contact thì controller sẽ chuyển
+																// thành contact
 		List<Book> listNewBook = new BookService().getBoolNew();
 		List<Book> listBestSeller = new BookService().getBookHot();
 		List<Book> listRandomBook = new BookService().getBookRandom();
@@ -30,54 +39,110 @@ public class HomeController {
 		mav.addObject("randomProduct", listRandomBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public ModelAndView aboutPage() {
-		ModelAndView mav = new ModelAndView("user/about"); 
+		ModelAndView mav = new ModelAndView("user/about");
 		return mav;
 	}
 
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public ModelAndView contactPage() {
-		ModelAndView mav = new ModelAndView("user/contact"); 
+		ModelAndView mav = new ModelAndView("user/contact");
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/news", method = RequestMethod.GET)
 	public ModelAndView newsPage() {
-		ModelAndView mav = new ModelAndView("user/news"); 
+		ModelAndView mav = new ModelAndView("user/news");
 		List<Book> listSaleBook = new BookService().getAllBook();
 		mav.addObject("saleProduct", listSaleBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView deliveryPage() {
-		ModelAndView mav = new ModelAndView("user/delivery"); 
+		ModelAndView mav = new ModelAndView("user/delivery");
 		List<Book> allBook = new BookService().getAllBook();
 		int size = allBook.size();
 		mav.addObject("allProduct", allBook);
 		mav.addObject("size", size);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ModelAndView searchPage(String genre) {
-		ModelAndView mav = new ModelAndView("user/bookSearch"); 
+		ModelAndView mav = new ModelAndView("user/bookSearch");
 		List<Book> listGenreBook = new BookService().getBookGenre(genre);
 		mav.addObject("genreProduct", listGenreBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/preview", method = RequestMethod.GET)
-	public ModelAndView preview() {
-		ModelAndView mav = new ModelAndView("user/preview"); 
+	public ModelAndView preview(String bookId) {
+		ModelAndView mav = new ModelAndView("user/preview");
+		Book bookSelected = new BookService().getBookById(bookId);
+		mav.addObject("bookSelected", bookSelected);
+		return mav;
+	}
+
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public ModelAndView cartPage() {
+		ModelAndView mav = new ModelAndView("user/cart");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
-	public ModelAndView cartPage() {
-		ModelAndView mav = new ModelAndView("user/cart"); 
-		return mav;
+
+
+	@RequestMapping(value = "/deleteCart")
+	public @ResponseBody String deleteCart(@RequestParam(value = "bookId") String bookId, HttpSession session) {
+		List<Cart> listCart = (List<Cart>) session.getAttribute("listCart");
+		listCart.remove(Cart.getCartByBookId(listCart, bookId));
+		String json = "";
+		if (listCart != null & listCart.size() > 0) {
+			json = new Gson().toJson(listCart);
+			System.out.println(json);
+			return json;
+		}
+		return "";
+	}
+	
+	@RequestMapping(value = "/addCart")
+	public String addCart(@RequestParam("bookId") String bookId, @RequestParam("number") String quantity,
+			HttpSession session) {
+		int quantityInt = Integer.parseInt(quantity);
+		Book book = new BookService().getBookById(bookId);
+		List<Cart> listCart = (List<Cart>) session.getAttribute("listCart");
+		if (listCart == null) {
+			listCart = new ArrayList<>();
+			Cart cart = new Cart(book, quantityInt);
+			listCart.add(cart);
+		} else {
+			boolean check = false;
+			for (Cart cart : listCart) {
+				if (cart.getProduct().getBook_id().equals(bookId)) {
+					check = true;
+					cart.setQuantity(cart.getQuantity() + quantityInt);
+					break;
+				}
+			}
+			if (!check) {
+				Cart cart = new Cart(book, quantityInt);
+				listCart.add(cart);
+			}
+		}
+		session.setAttribute("listCart", listCart);
+
+		session.setAttribute("totalAmount", calTotalAmount(listCart));
+		return "user/cart";
+	}
+
+	public float calTotalAmount(List<Cart> listCart) {
+		float totalAmount = 0;
+
+		for (Cart cart : listCart) {
+			totalAmount += cart.getProduct().getPrice() * cart.getQuantity();
+		}
+		return totalAmount;
 	}
 }

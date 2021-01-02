@@ -110,7 +110,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 						<div id="container">
 						   <div id="products_example">
 							   <div id="products" style="width: 90%; background-color: #eee;">
-								<img src="<c:url value="/resources/user/images/Haivandamduoidaybien.jpg"/>"
+								<img src="<c:url value="${bookSelected.image}"/>"
 											alt="learn more" />
 							</div>
 						</div>
@@ -118,32 +118,33 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 				</div>
 				<div class="desc span_3_of_2b">
 					
-					<h2 style="color:red">Tôi thấy hoa vàng trên cỏ xanh </h2>
+					<h2 style="color:red">${bookSelected.name}</h2>
 					<span>
 					<div class="grid images_3_of_2b">
-						<p><h3>Nhà xuất bản: NXB Trẻ</h3></p>
+						<p><h3>Nhà xuất bản: ${bookSelected.publisher}</h3></p>
 						<br>
 						<p><h3>Năm xuất bản: 2018</h3></p>
 					</div>
 					</span>
 					<span>
 					<div class="grid images_3_of_2b">
-						<p><h3>Tác giả: Nguyễn Nhật Ánh</h3></p>
+						<p><h3>Tác giả: ${bookSelected.author}</h3></p>
 						<br>
-						<p><h3>Số trang: 223</h3></p>
+						<p><h3>Số trang: ${bookSelected.pages}</h3></p>
 					</div>
 					</span>
 					<br><br><br>
 					<div class="price">
-						<p><span>Giá:  153600đ</span></p>
+						<p><span>Giá:  ${bookSelected.price}</span></p>
 					</div>
 					<div class="available" style="padding: 7px 0px">
 					
 					</div>
 				<div class="share-desc">
-				<form action="cart" method="get">
-					<input name="number" type="number" style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px">
-					<input type="submit" style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" value="Add to Cart">
+				<form action="/BookShop/addCart" method="get">
+					<input name="bookId" type="text" style="background: #fff; border: none; color: #fff; padding: 0; width: 0px" value="${bookSelected.book_id}">
+					<input name="number" type="number" style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px" value="1">
+					<input type="submit" style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" value="Thêm vào giỏ hàng">
 					<br>			
 					<div class="clear"></div>
 				</form>
