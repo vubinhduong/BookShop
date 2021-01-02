@@ -88,9 +88,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script async src='../../../js/autotrack.js'></script>
 
 	<meta name="robots" content="noindex">
-<body>
+<body style="background-color: #c1bdba;">
 	
-	<div class="wrap">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<br>
@@ -101,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="section group">
 					<c:forEach var="item" items="${allProduct}" begin="<%= i %>" end="<%= i+3 %>">
 					<div class="grid_1_of_4 images_1_of_4">
-						<a href="/BookShop/preview"><img src="<c:url value="${item.image}"/>"
+						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
 						<h2>${item.name}</h2>
 						<div class="price-details">

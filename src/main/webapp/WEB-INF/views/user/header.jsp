@@ -20,13 +20,13 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		<div class="header_top">
+		<div class="header_top" style="padding: 0px">
 			<div class="logo">
 				<a href="/BookShop/homePage"><img src="${pageContext.request.contextPath}/resources/user/images/logo.png" alt="" /></a>
 			</div>
 			<div class="cart">
 				<p>
-					<span>Cart:</span>
+					<span><a href="/BookShop/cart">Cart:</a></span>
 				<div id="dd" class="wrapper-dropdown-2">
 					0 item(s) - $0.00
 					<ul class="dropdown">

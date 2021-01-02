@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class Cart {
 	private Book product;
 	private int quantity;
@@ -25,6 +27,15 @@ public class Cart {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	public static Cart getCartByBookId(List<Cart> listCart, String bookId) {
+		for (Cart cart : listCart) {
+			if (cart.getProduct().getBook_id().equals(bookId)) {
+				return cart;
+			}
+		}
+		return null;
 	}
 	
 }
