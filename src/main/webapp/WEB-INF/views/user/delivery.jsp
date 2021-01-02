@@ -88,9 +88,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script async src='../../../js/autotrack.js'></script>
 
 	<meta name="robots" content="noindex">
-<body>
+<body style="background-color: #c1bdba;">
 	
-	<div class="wrap">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<br>

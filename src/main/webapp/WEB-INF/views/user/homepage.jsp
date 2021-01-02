@@ -88,9 +88,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script async src='../../../js/autotrack.js'></script>
 
 	<meta name="robots" content="noindex">
-<body>
+<body style="background-color: #c1bdba;">
 	
-	<div class="wrap">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;}">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<jsp:include page="leftmenu.jsp"></jsp:include>
@@ -167,13 +167,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!---728x90--->
 
 			<div class="content">
-				<div class="content_top">
+				<div class="content_top" style="background-color: #FFF1D6;">
 					<div class="heading">
 						<h3>Sách mới</h3>
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">Xam tất cả</a>
+							<a href="#">Xem tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
@@ -201,7 +201,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</c:forEach>
 				</div>
-				<div class="content_bottom">
+				<div class="content_bottom" style="background-color: #FFF1D6;">
 					<!---728x90--->
 
 					<div class="heading">
@@ -236,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</c:forEach>	
 				</div>
-				<div class="content_bottom">
+				<div class="content_bottom" style="background-color: #FFF1D6;">
 					<!---728x90--->
 
 					<div class="heading">

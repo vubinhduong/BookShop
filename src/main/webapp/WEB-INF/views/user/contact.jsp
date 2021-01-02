@@ -71,9 +71,9 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 <script async src='../../../js/autotrack.js'></script>
 
 <meta name="robots" content="noindex">
-<body><link rel="stylesheet" href="../../../images/demobar_w3_4thDec2019.css">
+<body style="background-color: #c1bdba;"><link rel="stylesheet" href="../../../images/demobar_w3_4thDec2019.css">
 
-  <div class="wrap">
+  <div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
 	 <jsp:include page="header.jsp"></jsp:include>	
    </div>
  <div class="main">

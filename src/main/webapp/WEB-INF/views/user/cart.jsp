@@ -63,7 +63,7 @@ span {
 }
 </style>
 </head>
-<body>
+<body style="background-color: #c1bdba;">
 
 	<script type="text/javascript">
 	function showCart(id) {
@@ -147,7 +147,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
      ga('send', 'pageview');
    </script>
 
-	<div class="wrap">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<br style="margin-top: 5px">
 		<h3 style="width: 80%; margin-left: 10%">GIỎ HÀNG</h3>

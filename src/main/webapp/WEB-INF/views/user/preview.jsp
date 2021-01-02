@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	</script>
 </head>
-<body>
+<body style="background-color: #c1bdba;">
 <script src='../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script><script src="../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
 <script>
 (function(){
@@ -48,6 +48,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
   	}
 })();
+</script>
+<script type="text/javascript">
+	function themsach() {
+		alert("Thêm sách thành công!");
+	}
 </script>
 <script>
 (function(){
@@ -100,7 +105,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 
     	<div class="content_top">
     		<div class="back-links"  style="width: 100%">
-    		<p style="font-size: 16px"><span><a style="font-size: 16px" href="index.html">Home</a></span> > <span><a style="font-size: 16px" href="#">Tiểu thuyết</a></span></p>
+    		<p style="font-size: 16px"><span><a style="font-size: 16px" href="homePage">Home</a></span> > <span><a style="font-size: 16px" href="#">Tiểu thuyết</a></span></p>
     	    </div>
     		<div class="clear"></div>
     	</div>
@@ -135,7 +140,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 					</span>
 					<br><br><br>
 					<div class="price">
-						<p><span>Giá:  ${bookSelected.price}</span></p>
+						<p><span>Giá:  ${bookSelected.price} đ</span></p>
 					</div>
 					<div class="available" style="padding: 7px 0px">
 					
@@ -144,7 +149,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 				<form action="/BookShop/addCart" method="get">
 					<input name="bookId" type="text" style="background: #fff; border: none; color: #fff; padding: 0; width: 0px" value="${bookSelected.book_id}">
 					<input name="number" type="number" style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px" value="1">
-					<input type="submit" style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" value="Thêm vào giỏ hàng">
+					<input type="submit" onclick="themsach()" style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" value="Thêm vào giỏ hàng">
 					<br>			
 					<div class="clear"></div>
 				</form>
@@ -159,6 +164,12 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 				 	<br>
 				 	<h3>Thể loại: Romance, Tuổi học trò, Truyện ngắn</h3>
 				 	<br>
+				 	<br>
+				 	<div>
+				 	<span><h3 style="color: red; font-size: 20px; width: 140px; float: left;">Đánh giá: ${bookSelected.rate}/5</h3></span> 
+				 	<span><img style="float: left; width: 110px;" src="${pageContext.request.contextPath}/resources/user/images/value-rating.png" alt="" /></span>
+				 	<span><h3 style="font-size: 16px; width: 250px; float: left; padding-left: 5px; padding-top: 2px;">(${bookSelected.rateturn} lượt đánh giá)</h3></span> 
+				 	</div>
 				 </div>
 			</div>
 			<div class="clear"></div>
@@ -170,7 +181,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 				<ul class="resp-tabs-list">
 					<li>Giới thiệu sản phẩm</li>
 					<li>Đánh giá - Bình luận</li>
-					<li>Product Reviews</li>
+
 					<div class="clear"></div>
 				</ul>
 				<div class="resp-tabs-container">
@@ -200,29 +211,6 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 					    </form>
 					    </div>
 				  	 </div>	
-				  	 </div>				
-				</div>
-
-				<div class="review">
-					<h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
-					 <ul>
-					 	<li>Price :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/price-rating.png" alt="" /></a></li>
-					 	<li>Value :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/value-rating.png" alt="" /></a></li>
-					 	<li>Quality :<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/quality-rating.png" alt="" /></a></li>
-					 </ul>
-					 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-				  <div class="your-review">
-				   <div class="wish-list">
-				  	  <form>
-					    	<div>
-						    	<span><label>Bình luận<span class="red">*</span></label></span>
-						    	<span><input type="text" value=""></span>
-						    </div>
-						   <div>
-						   		<span><input type="submit" value="Gửi bình luận"></span>
-						  </div>
-					    </form>
-					    </div>
 				  	 </div>				
 				</div>
 			</div>
