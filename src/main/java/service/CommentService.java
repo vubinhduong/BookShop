@@ -13,13 +13,12 @@ import model.Comment;
 public class CommentService {
     private String query;
     ResultSet rs;
-    private Connection connection = JDBCConnection.getJDBCConnection();
     
-    public List<Comment> getAllCommnent(){
+    public List<Comment> getCommnent(){
+    	Connection connection = JDBCConnection.getJDBCConnection();
     	List<Comment> cmt = new ArrayList<Comment>();
     	try {
     		Statement stt = connection.createStatement();
-    		query = "SELECT * FROM cmnt";
     		rs = stt.executeQuery(query);
     		while(rs.next()) {
     			int cmt_id = rs.getInt("cmt_id");
@@ -30,10 +29,34 @@ public class CommentService {
     			
     			Comment c = new Comment(cmt_id, book_id, username, date_cmt, content);
     		    cmt.add(c);
+    		    System.out.println(c.getBook_id());
     		}
     	} catch(SQLException e) {
     		e.printStackTrace();
     	}
+    	finally {
+			if(connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
     	return cmt;
     }
+    
+    // tất cả cmt
+    public List<Comment> getAll(){
+    	query = "SELECT * FROM CMT";
+    	return getCommnent();
+    }
+    
+    public List<Comment> getCmtByBookId(String Book_id){
+    	query = "SELECT * \r\n" + 
+    			"FROM cmt\r\n" + 
+    			"where book_id = '" + Book_id + "'";
+    	return getCommnent();
+    }
+    
 }

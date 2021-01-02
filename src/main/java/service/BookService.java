@@ -134,6 +134,12 @@ public class BookService {
 		return book;
 	}
 	
-	
+	// tìm kiếm sách theo tên 
+	public List<Book> getBookByName(String name){
+		sql = "SELECT * \r\n" + 
+				"FROM book b\r\n" + 
+				"where b.book_name like '%" + name + "%'";
+		return getBook();
+	}
 	
 }

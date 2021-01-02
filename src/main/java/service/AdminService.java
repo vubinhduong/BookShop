@@ -31,6 +31,27 @@ public class AdminService {
     	} catch(SQLException e) {
     		e.printStackTrace();
     	}
+    	finally {
+			if(connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 		return admin;
     }
+    
+    public boolean checkLoginAdmin(String username, String pass) {
+    	List<Admin> admin = getAllAdmin();
+    	for(Admin i : admin) {
+    		if(i.getUsername().equals(username) && i.getPassword().equals(pass))
+    			return true;	
+    	}
+    	return false;
+    }
+    
+    
+    
 }

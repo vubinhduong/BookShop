@@ -72,4 +72,17 @@ public class UserService {
     		e3.printStackTrace();
     	}
     }
+    
+    public boolean checkLoginUser(String username, String pass) {
+    	List<User> user = getAllUser();
+    	for(User i : user) {
+    		if(i.getUsername().equals(username) && i.getPassword().equals(pass))
+    			return true;
+    	}
+    	return false;
+    }
+    
+    
+    
+    
 }
