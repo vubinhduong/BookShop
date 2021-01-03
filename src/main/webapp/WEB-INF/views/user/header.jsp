@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML>
 <head>
@@ -12,12 +13,22 @@
 					<span>Cần trợ giúp?</span> Hãy gọi chúng tôi: <span class="number">0396251874</span></span>
 				</p>
 			</div>
-			<div class="account_desc">
+			<c:if test="${sessionScope.logged==null}">
+				<div class="account_desc">
+					<ul>
+						<li><a href="#">Đăng kí</a></li>
+						<li><a href="login">Đăng nhập</a></li>
+					</ul>
+				</div>
+			</c:if> 
+			<c:if test="${sessionScope.logged!=null}">
+				<div class="account_desc">
 				<ul>
-					<li><a href="#">Đăng kí</a></li>
-					<li><a href="#">Đăng nhập</a></li>
+					<li><a href="" style="font-weight: bold; color: #000; font-family: serif; font-size: 16px">${sessionScope.logged.username}</a></li>
+					<li><a href="logout" style="color: #000; font-family: serif;">Đăng xuất</a></li>
 				</ul>
 			</div>
+			</c:if>
 			<div class="clear"></div>
 		</div>
 		<div class="header_top" style="padding: 0px">

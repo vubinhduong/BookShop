@@ -105,15 +105,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
-								<p>
-									<span class="rupees">${item.price}</span>
+								<p style="width: 170px">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="text-decoration: line-through; margin-top: 3.5px;">${item.price}đ</h4></span>
 								</p>
 							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
+
 							<div class="clear"></div>
 						</div>
 					</div>
