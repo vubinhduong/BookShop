@@ -15,7 +15,7 @@ public class AdminService {
     ResultSet rs;
     private Connection connection = JDBCConnection.getJDBCConnection();
     
-    public List<Admin> getAllAdmin(){
+    private List<Admin> getAllAdmin(){
     	List<Admin> admin = new ArrayList<Admin>();
     	try {
     		Statement statement = connection.createStatement();
@@ -31,15 +31,7 @@ public class AdminService {
     	} catch(SQLException e) {
     		e.printStackTrace();
     	}
-    	finally {
-			if(connection != null)
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
+    
 		return admin;
     }
     
@@ -50,6 +42,18 @@ public class AdminService {
     			return true;	
     	}
     	return false;
+    }
+    
+    public Admin getAdminById(String username) {
+    	List<Admin> admin = getAllAdmin();
+    	Admin a = new Admin();
+    	for(Admin i : admin) {
+    		if(i.getUsername().equals(username)) {
+    			a = i;
+    			break;
+    		}
+    	}
+    	return a;
     }
     
     

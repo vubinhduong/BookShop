@@ -1,6 +1,9 @@
 package model;
 
 public class Admin {
+	public Admin() {
+		
+	}
 	
     public Admin(String username, String password) {
 		super();

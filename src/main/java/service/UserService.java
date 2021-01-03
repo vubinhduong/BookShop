@@ -42,7 +42,6 @@ public class UserService {
     }
     
     public boolean addUser(User u) {
-    		connection = JDBCConnection.getJDBCConnection();
     	   try {
     		   query = "INSERT INTO user(user_id, username, password, fullname, address, phone, email, brithday)"
                         +" VALUES(?,?,?,?,?,?,?)";
@@ -63,7 +62,6 @@ public class UserService {
     }
     
     public void deleteUser(int userid) {
-    	connection = JDBCConnection.getJDBCConnection();
     	try {
     		query = "DELETE * FROM user WHERE user_id = '" + userid +"'";
     		PreparedStatement ps = connection.prepareStatement(query);
@@ -82,7 +80,17 @@ public class UserService {
     	return false;
     }
     
-    
+    public User getUserById(String username) {
+    	User a = new User();
+    	List<User> user = getAllUser();
+    	for(User i : user) {
+    		if(i.getUsername().equals(username)) {
+    			i = a;
+    			break;
+    		}
+    	}
+    	return a;
+    }
     
     
 }

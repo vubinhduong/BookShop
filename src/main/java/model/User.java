@@ -3,6 +3,10 @@ package model;
 import java.util.Date;
 
 public class User {
+	
+	public User() {
+		
+	}
  
 	public User(String username, String password, String fullname, String address, String phone,
 			String email, Date birthday) {

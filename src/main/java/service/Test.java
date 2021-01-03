@@ -10,11 +10,6 @@ public class Test {
 	public static void main(String[] args) {
 		AdminService a = new AdminService();
 		CommentService c = new CommentService();
-		List<Admin> b = a.getAllAdmin();
-		if(b == null)
-			System.out.println("thất bại");
-		else 
-			System.out.println("thành công");
 		ArrayList<Genre> gen = (ArrayList<Genre>) GenreSevice.getAll("1");
 		for(Genre i : gen) {
 			System.out.println(i.getGenre_id() + " " + i.getName());
@@ -36,5 +31,7 @@ public class Test {
 		user.getAllUser();
 		System.out.println(user.checkLoginUser("a", "a"));
 		System.out.println(admin.checkLoginAdmin("a", "a"));
+		System.out.println(admin.getAdminById("a").getUsername());
+		System.out.println(user.getUserById("a"));
 	}
 }
