@@ -14,12 +14,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import model.Admin;
 import model.Book;
 import model.Cart;
+import model.User;
+import service.AdminService;
 import service.BookService;
+import service.UserService;
 
 @Controller
 public class HomeController {
+
+	AdminService adminService = new AdminService();
+	UserService userService = new UserService();
 
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homepage() {
@@ -38,6 +45,45 @@ public class HomeController {
 		mav.addObject("bestSellerProduct", listBestSeller);
 		mav.addObject("randomProduct", listRandomBook);
 		return mav;
+	}
+
+	@RequestMapping(value = "/logined")
+	public ModelAndView logined(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
+		if (adminService.checkLoginAdmin(username, password)) {
+			ModelAndView mav = new ModelAndView("admin/index");
+			Admin adminLogged = new Admin(username, password);
+			session.setAttribute("logged", adminLogged);
+			return mav;
+		} else if (userService.checkLoginUser(username, password)) {
+			ModelAndView mav = homePage();
+			User userLogged = new User(username, password, "", "", "", "", null);
+			session.setAttribute("logged", userLogged);
+			return mav;
+		} else {
+			ModelAndView mav = new ModelAndView("user/login");
+			return mav;
+		} 
+	}
+	
+	@RequestMapping(value = "/logout")
+	public ModelAndView logined(HttpSession session) {
+		session.removeAttribute("logged");
+		ModelAndView mav = homePage();
+		return mav;
+	}
+	
+	@RequestMapping(value = "/signUp")
+	public ModelAndView signUp(@RequestParam("username") String username, @RequestParam("password") String password) {
+		if (adminService.checkLoginAdmin(username, password)) {
+			ModelAndView mav = new ModelAndView("admin/index");
+			return mav;
+		} else if (userService.checkLoginUser(username, password)) {
+			ModelAndView mav = new ModelAndView("user/homepage");
+			return mav;
+		} else {
+			ModelAndView mav = new ModelAndView("user/login");
+			return mav;
+		} 
 	}
 
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
@@ -91,8 +137,12 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("user/cart");
 		return mav;
 	}
-	
 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView loginPage() {
+		ModelAndView mav = new ModelAndView("user/login");
+		return mav;
+	}
 
 	@RequestMapping(value = "/deleteCart")
 	public @ResponseBody String deleteCart(@RequestParam(value = "bookId") String bookId, HttpSession session) {
@@ -106,7 +156,7 @@ public class HomeController {
 		}
 		return "";
 	}
-	
+
 	@RequestMapping(value = "/addCart")
 	public String addCart(@RequestParam("bookId") String bookId, @RequestParam("number") String quantity,
 			HttpSession session) {
@@ -145,4 +195,5 @@ public class HomeController {
 		}
 		return totalAmount;
 	}
+	
 }
