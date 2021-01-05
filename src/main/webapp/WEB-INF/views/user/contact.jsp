@@ -73,7 +73,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 <meta name="robots" content="noindex">
 <body style="background-color: #c1bdba;"><link rel="stylesheet" href="../../../images/demobar_w3_4thDec2019.css">
 
-  <div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
+  <div class="wrap" style="padding: 0px 20px; background-color: #fff;">
 	 <jsp:include page="header.jsp"></jsp:include>	
    </div>
  <div class="main">

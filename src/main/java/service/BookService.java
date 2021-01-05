@@ -54,7 +54,7 @@ public class BookService {
 	
 	// trả về tất cả sách
 	public List<Book> getAllBook(){
-		sql = "SELECT * FROM BOOK limit 30";
+		sql = "SELECT * FROM BOOK limit 50";
 		return getBook();
 	}
 	
@@ -71,6 +71,12 @@ public class BookService {
 		sql = "SELECT * FROM BOOK WHERE price between " + price1 + " and " + price2;
 		return getBook();
 	}
+	
+	public List<Book> getBookDiscount(){
+		sql = "SELECT * FROM BOOK WHERE discount > 0 ORDER BY discount DESC ";
+		return getBook();
+	}
+	
 	
 	// trả về sách mới
 	public List<Book> getBoolNew(){

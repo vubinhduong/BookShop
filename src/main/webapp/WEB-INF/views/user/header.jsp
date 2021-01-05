@@ -89,8 +89,8 @@
 				</ul>
 			</div>
 			<div class="search_box">
-				<form>
-					<input type="text" value="Tìm kiếm" onfocus="this.value = '';"
+				<form action="/BookShop/searchByName" method="get">
+					<input name="bookName" type="text" value="Tìm kiếm" onfocus="this.value = '';"
 						onblur="if (this.value == '') {this.value = 'Search';}"><input
 						type="submit" value="">
 				</form>

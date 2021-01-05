@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="robots" content="noindex">
 <body style="background-color: #c1bdba;">
 	
-	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff;">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<jsp:include page="leftmenu.jsp"></jsp:include>
@@ -103,15 +103,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
+								<c:if test="${item.discount==0}">
 								<p>
-									<span class="rupees">${item.price}</span>
+									<span style="font-size: 2em; color: red;" class="rupees">${item.price}đ</span>
 								</p>
+							</c:if>	
+							<c:if test="${item.discount>0}">
+								<p style="width: 250px;">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="float: left; text-decoration: line-through; margin-top: 3.5px; margin-left: 5px">${item.price}đ</h4></span>
+									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1.5em;">-${item.discount}%</h4></span>
+								</p>
+							</c:if>
 							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
-							</div>
+							
 							<div class="clear"></div>
 						</div>
 

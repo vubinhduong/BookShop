@@ -17,9 +17,11 @@ import com.google.gson.Gson;
 import model.Admin;
 import model.Book;
 import model.Cart;
+import model.Comment;
 import model.User;
 import service.AdminService;
 import service.BookService;
+import service.CommentService;
 import service.UserService;
 
 @Controller
@@ -28,22 +30,83 @@ public class HomeController {
 	AdminService adminService = new AdminService();
 	UserService userService = new UserService();
 
-	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
-	public ModelAndView homepage() {
-		ModelAndView mav = new ModelAndView("admin/index"); // admin/index
-		return mav;
-	}
-
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
-		ModelAndView mav = new ModelAndView("user/homepage"); // sửa từ homepage thành contact thì controller sẽ chuyển
-																// thành contact
+		ModelAndView mav = new ModelAndView("user/homepage"); // user/homepage
 		List<Book> listNewBook = new BookService().getBoolNew();
 		List<Book> listBestSeller = new BookService().getBookHot();
 		List<Book> listRandomBook = new BookService().getBookRandom();
 		mav.addObject("newProduct", listNewBook);
 		mav.addObject("bestSellerProduct", listBestSeller);
 		mav.addObject("randomProduct", listRandomBook);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public ModelAndView contactPage() {
+		ModelAndView mav = new ModelAndView("user/contact");
+		return mav;
+	}
+
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public ModelAndView aboutPage() {
+		ModelAndView mav = new ModelAndView("user/about");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
+	public ModelAndView newsPage() {
+		ModelAndView mav = new ModelAndView("user/news");
+		List<Book> listSaleBook = new BookService().getBookDiscount();
+		mav.addObject("saleProduct", listSaleBook);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
+	public ModelAndView deliveryPage() {
+		ModelAndView mav = new ModelAndView("user/delivery");
+		List<Book> allBook = new BookService().getAllBook();
+		int size = allBook.size();
+		mav.addObject("allProduct", allBook);
+		mav.addObject("size", size);
+		return mav;
+	}
+
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ModelAndView searchPage(String genre) {
+		ModelAndView mav = new ModelAndView("user/bookSearch");
+		List<Book> listGenreBook = new BookService().getBookGenre(genre);
+		mav.addObject("genreProduct", listGenreBook);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/preview", method = RequestMethod.GET)
+	public ModelAndView preview(String bookId) {
+		ModelAndView mav = new ModelAndView("user/preview");
+		Book bookSelected = new BookService().getBookById(bookId);
+		List<Comment> listComment = new CommentService().getCmtByBookId(bookId);
+		mav.addObject("bookSelected", bookSelected);
+		mav.addObject("listComment", listComment);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/searchByName", method = RequestMethod.GET)
+	public ModelAndView searchByName(@RequestParam("bookName") String bookName) {
+		ModelAndView mav = new ModelAndView("user/delivery");
+		List<Book> listBookSearch = new BookService().getBookByName(bookName);
+		mav.addObject("allProduct", listBookSearch);
+		return mav;
+	}
+
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public ModelAndView cartPage() {
+		ModelAndView mav = new ModelAndView("user/cart");
+		return mav;
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView loginPage() {
+		ModelAndView mav = new ModelAndView("user/login");
 		return mav;
 	}
 
@@ -84,64 +147,6 @@ public class HomeController {
 			ModelAndView mav = new ModelAndView("user/login");
 			return mav;
 		} 
-	}
-
-	@RequestMapping(value = "/about", method = RequestMethod.GET)
-	public ModelAndView aboutPage() {
-		ModelAndView mav = new ModelAndView("user/about");
-		return mav;
-	}
-
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public ModelAndView contactPage() {
-		ModelAndView mav = new ModelAndView("user/contact");
-		return mav;
-	}
-
-	@RequestMapping(value = "/news", method = RequestMethod.GET)
-	public ModelAndView newsPage() {
-		ModelAndView mav = new ModelAndView("user/news");
-		List<Book> listSaleBook = new BookService().getAllBook();
-		mav.addObject("saleProduct", listSaleBook);
-		return mav;
-	}
-
-	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
-	public ModelAndView deliveryPage() {
-		ModelAndView mav = new ModelAndView("user/delivery");
-		List<Book> allBook = new BookService().getAllBook();
-		int size = allBook.size();
-		mav.addObject("allProduct", allBook);
-		mav.addObject("size", size);
-		return mav;
-	}
-
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ModelAndView searchPage(String genre) {
-		ModelAndView mav = new ModelAndView("user/bookSearch");
-		List<Book> listGenreBook = new BookService().getBookGenre(genre);
-		mav.addObject("genreProduct", listGenreBook);
-		return mav;
-	}
-
-	@RequestMapping(value = "/preview", method = RequestMethod.GET)
-	public ModelAndView preview(String bookId) {
-		ModelAndView mav = new ModelAndView("user/preview");
-		Book bookSelected = new BookService().getBookById(bookId);
-		mav.addObject("bookSelected", bookSelected);
-		return mav;
-	}
-
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
-	public ModelAndView cartPage() {
-		ModelAndView mav = new ModelAndView("user/cart");
-		return mav;
-	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView loginPage() {
-		ModelAndView mav = new ModelAndView("user/login");
-		return mav;
 	}
 
 	@RequestMapping(value = "/deleteCart")

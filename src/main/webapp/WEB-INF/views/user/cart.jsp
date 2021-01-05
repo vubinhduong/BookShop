@@ -147,7 +147,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
      ga('send', 'pageview');
    </script>
 
-	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<br style="margin-top: 5px">
 		<h3 style="width: 80%; margin-left: 10%">GIỎ HÀNG</h3>
@@ -171,7 +171,7 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 						<span style="width: 150px; text-align: center;"><img style="max-height: 50px;" src="<c:url value="${item.product.image}"/>" alt="learn more" /></span>
 						<span style="width: 350px; text-align: center;">${item.product.name}</span>
 						<span style="width: 100px; text-align: center;">${item.quantity}</span>
-						<span style="width: 200px; text-align: center;">${item.product.price*item.quantity} đ</span> 
+						<span style="width: 200px; text-align: center;">${item.product.price*(100-item.product.discount)/100*item.quantity} đ</span> 
 						<span class="z" style="width: 80px; text-align: center;"><a onclick="showCart('${item.product.book_id}')">Xóa</a></span>
 					</div>
 				</div>

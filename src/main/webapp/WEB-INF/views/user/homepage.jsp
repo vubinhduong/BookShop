@@ -90,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta name="robots" content="noindex">
 <body style="background-color: #c1bdba;">
 	
-	<div class="wrap" style="padding: 0px 20px; background-color: #fff; margin-top: 30px;}">
+	<div class="wrap" style="padding: 0px 20px; background-color: #fff; ">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
 				<jsp:include page="leftmenu.jsp"></jsp:include>
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div id="mover">
 								<div id="slide-1" class="slide">
 									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-1-image.jpg"/>"
+										<a href="/BookShop/news"><img src="<c:url value="/resources/user/images/slide-1-image.jpg"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="slider-text">
@@ -113,7 +113,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<br>
 											<h4>Combo Harry Potter Bộ 8 Cuốn</h4>									
 										</div>
-										<a href="preview.html" class="button">Thêm vào giỏ hàng</a>
+										<a href="/BookShop/news" class="button">Shop now</a>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -128,17 +128,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>Cơ hội mua sắm online giá hủy diệt, nhiều khuyến mãi hấp dẫn, miễn phí vận chuyển toàn quốc.</h4>
 											<h4></h4>
 										</div>
-										<a href="preview.html" class="button">Shop Now</a>
+										<a href="/BookShop/news" class="button">Shop Now</a>
 									</div>
 									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-3-image.jpg"/>"
+										<a href="/BookShop/news"><img src="<c:url value="/resources/user/images/slide-3-image.jpg"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="clear"></div>
 								</div>
 								<div class="slide">
 									<div class="slider-img">
-										<a href="preview.html"><img src="<c:url value="/resources/user/images/slide-2-image.jpg"/>"
+										<a href="/BookShop/news"><img src="<c:url value="/resources/user/images/slide-2-image.jpg"/>"
 											alt="learn more" /></a>
 									</div>
 									<div class="slider-text">
@@ -151,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<h4>Get to Know More About Our Memorable Services Lorem
 												Ipsum is simply dummy text</h4>
 										</div>
-										<a href="preview.html" class="button">Shop Now</a>
+										<a href="/BookShop/news" class="button">Shop Now</a>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -186,14 +186,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
+								<c:if test="${item.discount==0}">
 								<p>
-									<span class="rupees">${item.price}</span>
+									<span style="font-size: 2em; color: red;" class="rupees">${item.price}đ</span>
 								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
+							</c:if>	
+							<c:if test="${item.discount>0}">
+								<p style="width: 250px;">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="float: left; text-decoration: line-through; margin-top: 3.5px; margin-left: 5px">${item.price}đ</h4></span>
+									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1.5em;">-${item.discount}%</h4></span>
+								</p>
+							</c:if>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -222,14 +226,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
+							<c:if test="${item.discount==0}">
 								<p>
-									<span class="rupees">${item.price}</span>
+									<span style="font-size: 2em; color: red;" class="rupees">${item.price}đ</span>
 								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
+							</c:if>	
+							<c:if test="${item.discount>0}">
+								<p style="width: 250px;">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="float: left; text-decoration: line-through; margin-top: 3.5px; margin-left: 5px">${item.price}đ</h4></span>
+									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1.5em;">-${item.discount}%</h4></span>
+								</p>
+							</c:if>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -257,14 +265,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h2>${item.name}</h2>
 						<div class="price-details">
 							<div class="price-number">
+								<c:if test="${item.discount==0}">
 								<p>
-									<span class="rupees">${item.price}</span>
+									<span style="font-size: 2em; color: red;" class="rupees">${item.price}đ</span>
 								</p>
-							</div>
-							<div class="add-cart">
-								<h4>
-									<a href="preview.html">Add to Cart</a>
-								</h4>
+							</c:if>	
+							<c:if test="${item.discount>0}">
+								<p style="width: 250px;">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="float: left; text-decoration: line-through; margin-top: 3.5px; margin-left: 5px">${item.price}đ</h4></span>
+									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1.5em;">-${item.discount}%</h4></span>
+								</p>
+							</c:if>
 							</div>
 							<div class="clear"></div>
 						</div>
