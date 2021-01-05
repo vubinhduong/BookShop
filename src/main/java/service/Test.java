@@ -17,6 +17,7 @@ public class Test {
 		BookService book = new BookService();
 		UserService user = new UserService();
 		AdminService admin = new AdminService();
+		CommentService cmt = new CommentService();
 //		book.getAllBook();
 //		book.getBoolNew();
 //		book.getAllBook();
@@ -26,12 +27,14 @@ public class Test {
 //		book.getBookRandom();
 //		book.getBookById("a2");
 //		c.getAll();
-		c.getCmtByBookId("a2");
-		book.getBookByName("là");
-		user.getAllUser();
-		System.out.println(user.checkLoginUser("a", "a"));
-		System.out.println(admin.checkLoginAdmin("a", "a"));
-		System.out.println(admin.getAdminById("a").getUsername());
-		System.out.println(user.getUserById("a"));
+//		c.getCmtByBookId("a2");
+//		book.getBookByName("là");
+//		user.getAllUser();
+//		System.out.println(user.checkLoginUser("a", "a"));
+//		System.out.println(admin.checkLoginAdmin("a", "a"));
+//		System.out.println(admin.getAdminById("a").getUsername());
+//		System.out.println(user.getUserById("a"));
+		book.rateService("a3", 7);
+//		cmt.addCommentByBookId("a5", "addsff", "1");
 	}
 }

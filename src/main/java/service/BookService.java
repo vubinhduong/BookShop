@@ -11,13 +11,14 @@ import model.Book;
 public class BookService {
 	private String sql;
 	ResultSet rs;
-	private List<Book> getBook(){
+
+	private List<Book> getBook() {
 		Connection connection = JDBCConnection.getJDBCConnection();
 		List<Book> book = new ArrayList<Book>();
 		try {
 			Statement statement = connection.createStatement();
 			rs = statement.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				String book_id = rs.getString("book_id");
 				String name = rs.getString("Book_name");
 				int price = rs.getInt("price");
@@ -32,17 +33,17 @@ public class BookService {
 				String image = rs.getString("image");
 //				System.out.println(book_id+ name + price+ discount+ pages+ 
 //						publisher+publisher_year+ rate+ intro+ image);
-				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn, rate, intro, image);
-				book.add(a); 
-						
+				Book a = new Book(book_id, name, price, discount, pages, publisher, publisher_year, purchased, rateturn,
+						rate, intro, image);
+				book.add(a);
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
-				if(connection != null)
+				if (connection != null)
 					connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -51,57 +52,50 @@ public class BookService {
 		}
 		return book;
 	}
-	
+
 	// trả về tất cả sách
-	public List<Book> getAllBook(){
+	public List<Book> getAllBook() {
 		sql = "SELECT * FROM BOOK limit 50";
 		return getBook();
 	}
-	
+
 	// trả về thể loại sách
-	public List<Book> getBookGenre(String genre){
-		sql = "select b.book_id, Book_name, price, discount, pages, publisher, publishing_year, purchased, rateturn, rate, intro, image\r\n" + 
-				"from book b, genre g, genrebook gb\r\n" + 
-				"where g.name = '" + genre + "' and g.genre_id = gb.genre_id and b.book_id = gb.book_id";
+	public List<Book> getBookGenre(String genre) {
+		sql = "select b.book_id, Book_name, price, discount, pages, publisher, publishing_year, purchased, rateturn, rate, intro, image\r\n"
+				+ "from book b, genre g, genrebook gb\r\n" + "where g.name = '" + genre
+				+ "' and g.genre_id = gb.genre_id and b.book_id = gb.book_id";
 		return getBook();
 	}
-	
+
 	// trả về sách có giá từ price1 dến price2
-	public List<Book> getBookPrice(int price1, int price2){
+	public List<Book> getBookPrice(int price1, int price2) {
 		sql = "SELECT * FROM BOOK WHERE price between " + price1 + " and " + price2;
 		return getBook();
 	}
-	
-	public List<Book> getBookDiscount(){
+
+	public List<Book> getBookDiscount() {
 		sql = "SELECT * FROM BOOK WHERE discount > 0 ORDER BY discount DESC ";
 		return getBook();
 	}
-	
-	
+
 	// trả về sách mới
-	public List<Book> getBoolNew(){
-		sql = "SELECT *\r\n" + 
-				"from book\r\n" + 
-				"where year(curdate()) - 1 = publishing_year";
+	public List<Book> getBoolNew() {
+		sql = "SELECT *\r\n" + "from book\r\n" + "where year(curdate()) - 1 = publishing_year";
 		return getBook();
 	}
-	
+
 	// trả về sách bán chạy
-	public List<Book> getBookHot(){
-		sql = "SELECT * FROM BOOK\r\n" + 
-				"ORDER BY PURCHASED DESC\r\n" + 
-				"LIMIT 20";
+	public List<Book> getBookHot() {
+		sql = "SELECT * FROM BOOK\r\n" + "ORDER BY PURCHASED DESC\r\n" + "LIMIT 20";
 		return getBook();
 	}
-	
+
 	// trả về sách ngẫu nhiên
-	public List<Book> getBookRandom(){
-		sql = "SELECT * \r\n" + 
-				"FROM BOOK\r\n" + 
-				"ORDER BY RAND() LIMIT 20";
+	public List<Book> getBookRandom() {
+		sql = "SELECT * \r\n" + "FROM BOOK\r\n" + "ORDER BY RAND() LIMIT 20";
 		return getBook();
 	}
-	
+
 	public Book getBookById(String bookid) {
 		sql = "SELECT * FROM BOOK WHERE BOOK_ID = '" + bookid + "'";
 		Connection connection = JDBCConnection.getJDBCConnection();
@@ -109,7 +103,7 @@ public class BookService {
 		try {
 			Statement statement = connection.createStatement();
 			rs = statement.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				book.setBook_id(rs.getString("book_id"));
 				book.setName(rs.getString("Book_name"));
 				book.setPrice(rs.getInt("price"));
@@ -117,8 +111,8 @@ public class BookService {
 				book.setPages(rs.getInt("pages"));
 				book.setPublisher(rs.getString("publisher"));
 				book.setPublisher_year(rs.getInt("publishing_year"));
-				book.setPurchased(rs.getInt("purchased")); 
-				book.setRateturn( rs.getInt("rateturn"));
+				book.setPurchased(rs.getInt("purchased"));
+				book.setRateturn(rs.getInt("rateturn"));
 				book.setRate(rs.getFloat("rate"));
 				book.setIntro(rs.getString("intro"));
 				book.setImage(rs.getString("image"));
@@ -127,10 +121,9 @@ public class BookService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
-				if(connection != null)
+				if (connection != null)
 					connection.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -139,13 +132,33 @@ public class BookService {
 		}
 		return book;
 	}
-	
-	// tìm kiếm sách theo tên 
-	public List<Book> getBookByName(String name){
-		sql = "SELECT * \r\n" + 
-				"FROM book b\r\n" + 
-				"where b.book_name like '%" + name + "%'";
+
+	// tìm kiếm sách theo tên
+	public List<Book> getBookByName(String name) {
+		sql = "SELECT * \r\n" + "FROM book b\r\n" + "where b.book_name like '%" + name + "%'";
 		return getBook();
 	}
-	
+
+	public void rateService(String bookId, int number) {
+		sql = "update book \r\n" + "set rate = (rateturn * rate + " + number
+				+ ") / (rateturn + 1), rateturn = rateturn + 1\r\n" + "where book_id = '" + bookId + "'";
+		Connection connection = JDBCConnection.getJDBCConnection();
+
+		try {
+			Statement st = connection.createStatement();
+			st.execute(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
+
 }
