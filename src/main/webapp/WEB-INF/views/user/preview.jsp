@@ -166,7 +166,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</span> <span>
 								<div class="grid images_3_of_2b">
 									<p>
-									<h3>Tác giả: ${bookSelected.author}</h3>
+									<h3>Tác giả: ${bookSelected.author.get(0)}</h3>
 									</p>
 									<br>
 									<p>
@@ -239,23 +239,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="product-tags">
 									<div class="review">
 										<h4>Đánh giá sản phẩm</h4>
-										<form action="/BookShop/addCart" method="get">
+										<form action="/BookShop/rate" method="get">
 											<input name="bookId" type="text"
 												style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
 												value="${bookSelected.book_id}"> <input
 												name="number" min="1" max="5" type="number"
 												style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px;"
-												value="1"> <input type="submit" onclick="themsach()"
+												value="1"> <input type="submit""
 												style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;"
 												class="buttoncustom" value="Đánh giá"> <br>
 											<div class="clear"></div>
 										</form>
 										<div class="your-review">
 											<div class="wish-list">
-												<form>
+												<form action="/BookShop/comment">
 													<div>
 														<span><label>Bình luận<span class="red">*</span></label></span>
-														<span><input type="text" value=""></span>
+														<span><input name="comment" type="text" value=""></span>
 													</div>
 													<div>
 														<span><input type="submit" value="Gửi bình luận"></span>

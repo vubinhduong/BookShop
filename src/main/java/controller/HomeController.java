@@ -29,6 +29,7 @@ public class HomeController {
 
 	AdminService adminService = new AdminService();
 	UserService userService = new UserService();
+	CommentService commentService  = new CommentService();
 
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
@@ -199,6 +200,21 @@ public class HomeController {
 			totalAmount += cart.getProduct().getPrice() * cart.getQuantity();
 		}
 		return totalAmount;
+	}
+	
+	@RequestMapping(value = "/rate")
+	public @ResponseBody String rate(@RequestParam(value = "bookId") String bookId, @RequestParam(value = "score") int number) {
+		Book book = new BookService().getBookById(bookId);
+		book.rateService(bookId, number);
+		ModelAndView mav = preview(bookId);
+		return mav;
+	}
+	
+	@RequestMapping(value = "/comment")
+	public @ResponseBody String comment(@RequestParam(value = "bookId") String bookId, @RequestParam(value = "comment") String comment) {
+		commentService.addCommentByBookId(bookId, comment);
+		ModelAndView mav = preview(bookId);
+		return mav;
 	}
 	
 }
