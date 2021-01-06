@@ -29,7 +29,8 @@ public class HomeController {
 
 	AdminService adminService = new AdminService();
 	UserService userService = new UserService();
-	CommentService commentService  = new CommentService();
+	CommentService commentService = new CommentService();
+	BookService bookService = new BookService();
 
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
@@ -42,7 +43,7 @@ public class HomeController {
 		mav.addObject("randomProduct", listRandomBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public ModelAndView contactPage() {
 		ModelAndView mav = new ModelAndView("user/contact");
@@ -54,7 +55,7 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("user/about");
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/news", method = RequestMethod.GET)
 	public ModelAndView newsPage() {
 		ModelAndView mav = new ModelAndView("user/news");
@@ -62,7 +63,7 @@ public class HomeController {
 		mav.addObject("saleProduct", listSaleBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/delivery", method = RequestMethod.GET)
 	public ModelAndView deliveryPage() {
 		ModelAndView mav = new ModelAndView("user/delivery");
@@ -80,7 +81,7 @@ public class HomeController {
 		mav.addObject("genreProduct", listGenreBook);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/preview", method = RequestMethod.GET)
 	public ModelAndView preview(String bookId) {
 		ModelAndView mav = new ModelAndView("user/preview");
@@ -90,7 +91,7 @@ public class HomeController {
 		mav.addObject("listComment", listComment);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/searchByName", method = RequestMethod.GET)
 	public ModelAndView searchByName(@RequestParam("bookName") String bookName) {
 		ModelAndView mav = new ModelAndView("user/delivery");
@@ -112,7 +113,8 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/logined")
-	public ModelAndView logined(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session) {
+	public ModelAndView logined(@RequestParam("username") String username, @RequestParam("password") String password,
+			HttpSession session) {
 		if (adminService.checkLoginAdmin(username, password)) {
 			ModelAndView mav = new ModelAndView("admin/index");
 			Admin adminLogged = new Admin(username, password);
@@ -126,16 +128,16 @@ public class HomeController {
 		} else {
 			ModelAndView mav = new ModelAndView("user/login");
 			return mav;
-		} 
+		}
 	}
-	
+
 	@RequestMapping(value = "/logout")
 	public ModelAndView logined(HttpSession session) {
 		session.removeAttribute("logged");
 		ModelAndView mav = homePage();
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/signUp")
 	public ModelAndView signUp(@RequestParam("username") String username, @RequestParam("password") String password) {
 		if (adminService.checkLoginAdmin(username, password)) {
@@ -147,7 +149,7 @@ public class HomeController {
 		} else {
 			ModelAndView mav = new ModelAndView("user/login");
 			return mav;
-		} 
+		}
 	}
 
 	@RequestMapping(value = "/deleteCart")
@@ -201,20 +203,25 @@ public class HomeController {
 		}
 		return totalAmount;
 	}
-	
+
 	@RequestMapping(value = "/rate")
-	public @ResponseBody String rate(@RequestParam(value = "bookId") String bookId, @RequestParam(value = "score") int number) {
-		Book book = new BookService().getBookById(bookId);
-		book.rateService(bookId, number);
+	public ModelAndView rate(@RequestParam(value = "bookId") String bookId, @RequestParam(value = "number") int number,
+			@RequestParam(value = "user") String username) {
+		if (username != "") {
+			bookService.rateService(bookId, number);
+		}
 		ModelAndView mav = preview(bookId);
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/comment")
-	public @ResponseBody String comment(@RequestParam(value = "bookId") String bookId, @RequestParam(value = "comment") String comment) {
-		commentService.addCommentByBookId(bookId, comment);
+	public ModelAndView comment(@RequestParam(value = "bookId") String bookId,
+			@RequestParam(value = "comment") String comment, @RequestParam(value = "username") String username) {
+		if (username != "") {
+			commentService.addCommentByBookId(bookId, comment, username);
+		}
 		ModelAndView mav = preview(bookId);
 		return mav;
 	}
-	
+
 }

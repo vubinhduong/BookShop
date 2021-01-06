@@ -78,6 +78,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			}
 		})();
 	</script>
+	
 	<script>
 		(function() {
 			if (typeof _bsa !== 'undefined' && _bsa) {
@@ -116,6 +117,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		ga('require', 'urlChangeTracker');
 		ga('send', 'pageview');
 	</script>
+	
+	<c:if test="${sessionScope.logged==null}">
+		<script type="text/javascript">
+			function rate() {
+				alert('Vui lòng đăng nhập trước!');
+			};
+		</script>
+	</c:if>
+	<c:if test="${sessionScope.logged!=null}">
+		<script type="text/javascript">
+			function rate() {
+				alert('Cảm ơn đã góp ý!');
+			};
+			function comment() {
+				alert('Cảm ơn đã góp ý!');
+			}
+		</script>
+	</c:if>
+
 	<script async src='../../../js/autotrack.js'></script>
 
 	<meta name="robots" content="noindex">
@@ -176,12 +196,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</span> <br> <br> <br>
 							<div class="price">
 								<p>
-									<span>Giá: ${bookSelected.price*(100-bookSelected.discount)/100} đ</span>
-									<span style="font-size: 2em; color: #666; text-decoration: line-through; padding-left: 10px;">${bookSelected.price}đ</span>
+									<span>Giá:
+										${bookSelected.price*(100-bookSelected.discount)/100} đ</span> <span
+										style="font-size: 2em; color: #666; text-decoration: line-through; padding-left: 10px;">${bookSelected.price}đ</span>
 								</p>
-								
-								
-								
+
+
+
 							</div>
 							<div class="available" style="padding: 7px 0px"></div>
 							<div class="share-desc">
@@ -240,25 +261,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="review">
 										<h4>Đánh giá sản phẩm</h4>
 										<form action="/BookShop/rate" method="get">
+											<input id="userRate" type="hidden" name="user" value="${sessionScope.logged.name}">
 											<input name="bookId" type="text"
 												style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
-												value="${bookSelected.book_id}"> <input
+												value="${bookSelected.book_id}"> 
+												<input
 												name="number" min="1" max="5" type="number"
 												style="font-size: 20px; padding: 10px 10px 10px 20px; width: 70px;"
-												value="1"> <input type="submit""
+												value="1">
+												 <input type="submit"
 												style="color: #fff; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;"
-												class="buttoncustom" value="Đánh giá"> <br>
+												class="buttoncustom" value="Đánh giá" onclick="rate()"> <br>
 											<div class="clear"></div>
 										</form>
 										<div class="your-review">
 											<div class="wish-list">
 												<form action="/BookShop/comment">
 													<div>
-														<span><label>Bình luận<span class="red">*</span></label></span>
-														<span><input name="comment" type="text" value=""></span>
+														<input id="userComment" type="hidden" name="user" value="${sessionScope.logged.name}">
+														<input name="bookId" type="text"
+															style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
+															value="${bookSelected.book_id}"> <input
+															name="username" type="text"
+															style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
+															value="${sessionScope.logged.username}"> <span><label>Bình
+																luận<span class="red">*</span>
+														</label></span> <span><input name="comment" type="text" value=""></span>
 													</div>
 													<div>
-														<span><input type="submit" value="Gửi bình luận"></span>
+														<span><input onclick="rate()" type="submit" value="Gửi bình luận"></span>
 													</div>
 												</form>
 											</div>
@@ -266,7 +297,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<c:forEach var="item" items="${listComment}">
 											<div>
 												<p
-													style="padding-bottom: 0px; padding-left: 15px; width: 200px; float: left; color: #000; font-weight: 600; font-size: 14.5px;">${item.username}<br><p style="font-style: italic;">${item.date_cmt}</p></p>
+													style="padding-bottom: 0px; padding-left: 15px; width: 200px; float: left; color: #000; font-weight: 600; font-size: 14.5px;">${item.username}<br>
+												<p style="font-style: italic;">${item.date_cmt}</p>
+												</p>
 												<p
 													style="margin-left: 215px; margin-top: -20px; color: #333; font-weight: 400; font-size: 14.5px; width: 700px;">${item.content}</p>
 												<br>

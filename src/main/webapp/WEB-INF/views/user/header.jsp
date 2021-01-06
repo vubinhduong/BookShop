@@ -37,13 +37,7 @@
 			</div>
 			<div class="cart">
 				<p>
-					<span><a href="/BookShop/cart">Cart:</a></span>
-				<div id="dd" class="wrapper-dropdown-2">
-					0 item(s) - $0.00
-					<ul class="dropdown">
-						<li>you have no items in your Shopping cart</li>
-					</ul>
-				</div>
+					<span><a href="/BookShop/cart">Giỏ hàng</a></span>
 				</p>
 			</div>
 			<script type="text/javascript">
