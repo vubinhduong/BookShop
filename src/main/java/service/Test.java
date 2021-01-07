@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Admin;
+import model.Cart;
 import model.Genre;
 
 public class Test {
@@ -18,6 +19,7 @@ public class Test {
 		UserService user = new UserService();
 		AdminService admin = new AdminService();
 		CommentService cmt = new CommentService();
+		BillSevice bill = new BillSevice();
 //		book.getAllBook();
 //		book.getBoolNew();
 //		book.getAllBook();
@@ -34,7 +36,21 @@ public class Test {
 //		System.out.println(admin.checkLoginAdmin("a", "a"));
 //		System.out.println(admin.getAdminById("a").getUsername());
 //		System.out.println(user.getUserById("a"));
-		book.rateService("a3", 7);
+		book.rateService("a3", 5);
+		System.out.println(book.getBookById("a3").getRate());
 //		cmt.addCommentByBookId("a5", "addsff", "1");
+		Cart cart = new Cart();
+		cart.setProduct(book.getBookById("a3"));
+		cart.setQuantity(2);
+		List<Cart> car = new ArrayList<Cart>();
+		car.add(cart);
+		bill.addBill("a", car);
+		
+		
+		
+		
+		
 	}
+	
+	
 }

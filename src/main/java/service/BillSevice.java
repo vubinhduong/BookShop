@@ -10,6 +10,7 @@ import java.util.List;
 
 import model.Bill;
 import model.BillDetail;
+import model.Cart;
 
 
 public class BillSevice {
@@ -85,6 +86,60 @@ public class BillSevice {
 		return billDetail;
 	}
 	
-	
+	public void addBill(String username, List<Cart> cart) {
+		String billId = null;
+		Connection connection = JDBCConnection.getJDBCConnection();
+		long millis = System.currentTimeMillis();
+    	Date date = new Date(millis);
+    	sql = "select count(bill_id) cout from bill";
+    	try {
+    		Statement statement = connection.createStatement();
+			rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				billId = String.valueOf(rs.getInt("cout") + 1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+		sql = "INSERT INTO bill (bill_id, username, date_bill) "
+				+ "VALUES ('" + billId +  "','" + username + "','" + date.toString() + "')";
+		try {
+			Statement st = connection.createStatement();
+			st.execute(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		int billdetailId = 0;
+		
+		sql = "select count(bill_detail_id) cout from bill_detail";
+    	try {
+    		Statement statement = connection.createStatement();
+			rs = statement.executeQuery(sql);
+			while(rs.next()) {
+				billdetailId = rs.getInt("cout");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	for(Cart i : cart) {
+	    	sql = "INSERT INTO bill_detail (bill_detail_id, bill_id, book_id, quantity) "
+					+ "VALUES ('" + (billdetailId + 1) +  "','" + billId + "','" + i.getProduct().getBook_id() + "','" + i.getQuantity() + "')";
+			try {
+				Statement st = connection.createStatement();
+				st.execute(sql);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+    	
+		
+		
+	}
 	
 }
