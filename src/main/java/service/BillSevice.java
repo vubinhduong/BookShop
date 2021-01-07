@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Bill;
+import model.BillDetail;
 
 
 public class BillSevice {
@@ -47,5 +48,43 @@ public class BillSevice {
 		return bill;
 		
 	}
+	
+	public List<BillDetail> getBillByUsername(String username){
+		List<BillDetail> billDetail = new ArrayList<BillDetail>();
+		Connection connection = JDBCConnection.getJDBCConnection();
+		try {
 
+			String sql = "select a.bill_id, book_id, quantity, bill_detail_id \r\n" + 
+					"from bill a, bill_detail b\r\n" + 
+					"where username = '"+ username +"' and a.bill_id = b.bill_id";
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+
+			while (rs.next()) {
+				int billDetail_id = rs.getInt("bill_detail_id");
+				int bill_id = rs.getInt("bill_id");
+				String book_id = rs.getString("book_id");
+				int quantity = rs.getInt("quantity");
+				BillDetail a = new BillDetail(billDetail_id, bill_id, book_id, quantity);
+				billDetail.add(a);
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if(connection != null)
+					connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return billDetail;
+	}
+	
+	
+	
 }

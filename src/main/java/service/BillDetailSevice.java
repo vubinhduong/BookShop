@@ -23,7 +23,8 @@ public class BillDetailSevice {
 				int billDetail_id = rs.getInt("bill_detail_id");
 				int bill_id = rs.getInt("bill_id");
 				String book_id = rs.getString("book_id");
-				BillDetail a = new BillDetail(billDetail_id, bill_id, book_id);
+				int quantity = rs.getInt("quantity");
+				BillDetail a = new BillDetail(billDetail_id, bill_id, book_id, quantity);
 				billDetail.add(a);
 			}
 
