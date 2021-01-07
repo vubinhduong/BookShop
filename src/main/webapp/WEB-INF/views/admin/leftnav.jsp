@@ -36,7 +36,7 @@
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
 							<i class="fas fa-book-open"></i>
-						</div> Layouts
+						</div> Sách
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>

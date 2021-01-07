@@ -42,38 +42,22 @@
                             </div>
                             <div class="card-body">
                                 <div style="overflow: scroll;">
-                                    <table class="table table-bordered" id="dataTable" width="150%" cellspacing="0">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th style="max-width: 55px;">BookId</th>
-                                                <th style="min-width: 150px;">Tiêu đề</th>
-                                                <th>Giá</th>
-                                                <th>Giảm giá</th>
-                                                <th>Số trang</th>
-                                                <th style="min-width: 150px;">Nhà xuất bản</th>
-                                                <th>Năm xuất bản</th>
-                                                <th>Lượt mua</th>
-                                                <th>Đánh giá</th>
-                                                <th>Lượt đánh giá</th>
-                                                <th style="min-width: 350px;">Intro</th>
-                                                <th>Ảnh</th>
+                                                <th style="max-width: 150px;">Mã đơn</th>
+                                                <th style="max-width: 200px;">Mã đơn chi tiết</th>
+                                                <th>Mã sách</th>
+                                                <th>Số lượng</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                       	 	<c:forEach var="item" items="${allBook}">
+                                       	 	<c:forEach var="item" items="${listBillDetail}">
 	                                        	<tr>
-	                                        		<td><div style="height:60px; overflow:hidden; max-width: 55px">${item.book_id}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden; min-width: 150px">${item.name}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.price}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.discount}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.pages}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden; min-width: 150px;">${item.publisher}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.publisher_year}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.purchased}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.rate}</div></td>
-	                                        		<td><div style="height:60px; overflow:hidden">${item.rateturn}</div></td>
-	                                        		<td><div style="height:60px; overflow:scroll; min-width: 350px;">${item.intro}</div></td>
-	                                        		<td>${item.image}</td>
+	                                        		<td><div style="height:60px; overflow:hidden; max-width: 100px">${item.bill_id}</div></td>
+	                                        		<td><div style="height:60px; overflow:hidden; max-width: 200px">${item.billDetail_id}</div></td>
+	                                        		<td><div style="height:60px; overflow:hidden">${item.book_id}</div></td>
+	                                        		<td><div style="height:60px; overflow:hidden">${item.quantity}</div></td>
 	                                        	</tr>
                                         	</c:forEach>
                                         </tbody>

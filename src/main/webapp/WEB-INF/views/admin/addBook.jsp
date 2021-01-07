@@ -75,10 +75,7 @@
 									</div>
 									
 									<div style="width: 100%; height: 50px;">
-										<span style="float: left"> <h5>Tác giả:</h5> </span>
-										<span style="float: left; padding-left: 20px;"> <input name="author" style="width: 200px;" type="text" > </span>
-									
-										<span style="float: left; padding-left: 50px;"> <h5>Ảnh:</h5> </span>
+										<span style="float: left;"> <h5>Ảnh:</h5> </span>
 										<span style="float: left; padding-left: 20px;"> <input id="image" name="image" style="width: 317px;" type="file" > </span>
 									</div>
 									

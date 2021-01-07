@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -8,8 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.BillDetail;
 import model.Book;
+import model.User;
+import service.BillSevice;
 import service.BookService;
+import service.UserService;
 
 @Controller
 public class AdminController {
@@ -32,8 +37,13 @@ public class AdminController {
 	@RequestMapping(value = "/dataBill", method = RequestMethod.GET)
 	public ModelAndView dataBookBill() {
 		ModelAndView mav = new ModelAndView("admin/tables2");
-		List<Book> allBook = new BookService().getAllBook();
-		mav.addObject("allBook", allBook);
+		List<User> listUser = new UserService().getAllUser();
+		List<BillDetail> listBillDetail = new ArrayList<BillDetail>();
+		for (User user : listUser) {
+			List<BillDetail> list = new BillSevice().getBillByUsername(user.getUsername());
+			listBillDetail.addAll(list);
+		}
+		mav.addObject("listBillDetail", listBillDetail);
 		return mav;
 	}
 

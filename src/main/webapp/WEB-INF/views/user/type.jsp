@@ -93,10 +93,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="wrap" style="padding: 0px 20px; background-color: #fff;">
 		<jsp:include page="header.jsp"></jsp:include>
 			<div class="header_slide">
-				<jsp:include page="leftmenu.jsp"></jsp:include>
-				<div class="header_bottom_right">
+				<br>
+				<br>
+				<br>
+				<%for(int i = 0; i < 100; i+=4) { %> 
 					<div class="section group">
-						<c:forEach var="item" items="${genreProduct}" begin="1" end="4" step="1">
+					<c:forEach var="item" items="${typeProduct}" begin="<%= i %>" end="<%= i+3 %>">
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
@@ -105,28 +107,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="price-number">
 								<c:if test="${item.discount==0}">
 								<p>
-									<span style="font-size: 1.3em; color: red;" class="rupees">${item.price}đ</span>
+									<span style="font-size: 2em; color: red;" class="rupees">${item.price}đ</span>
 								</p>
 							</c:if>	
 							<c:if test="${item.discount>0}">
-								<p style="width: 180px;">
-									<span class="rupees" style="float: left; color: red; font-size: 1.3em;">${item.price*(100-item.discount)/100}đ</span>
-									<span class="rupees"><h4 style="font-size: 0.8em; float: left; text-decoration: line-through; margin-top: 2.5px; margin-left: 5px">${item.price}đ</h4></span>
-									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1em;">-${item.discount}%</h4></span>
+								<p style="width: 250px;">
+									<span class="rupees" style="float: left; color: red; font-size: 2em;">${item.price*(100-item.discount)/100}đ</span>
+									<span class="rupees"><h4 style="float: left; text-decoration: line-through; margin-top: 3.5px; margin-left: 5px">${item.price}đ</h4></span>
+									<span class="rupees"><h4 style="float: right; margin-top: -4px; color: red; font-size: 1.5em;">-${item.discount}%</h4></span>
 								</p>
 							</c:if>
 							</div>
-							
+
 							<div class="clear"></div>
 						</div>
-
 					</div>
-				</c:forEach>
-					</div>
+				</c:forEach>	
+				</div>
+				<%}%>
 				</div>
 				<div class="clear"></div>
 			</div>
-		</div>
 		<div class="main">
 			<!---728x90--->
 

@@ -86,13 +86,13 @@ public class BookService {
 
 	// trả về sách bán chạy
 	public List<Book> getBookHot() {
-		sql = "SELECT * FROM BOOK\r\n" + "ORDER BY PURCHASED DESC\r\n" + "LIMIT 20";
+		sql = "SELECT * FROM BOOK\r\n" + "ORDER BY PURCHASED DESC\r\n" + "LIMIT 30";
 		return getBook();
 	}
 
 	// trả về sách ngẫu nhiên
 	public List<Book> getBookRandom() {
-		sql = "SELECT * \r\n" + "FROM BOOK\r\n" + "ORDER BY RAND() LIMIT 20";
+		sql = "SELECT * \r\n" + "FROM BOOK\r\n" + "ORDER BY RAND() LIMIT 30";
 		return getBook();
 	}
 
