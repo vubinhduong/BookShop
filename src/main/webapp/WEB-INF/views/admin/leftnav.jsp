@@ -27,20 +27,15 @@
 					</a>
 					<a class="nav-link" href="/BookShop/dataBill">
 						<div class="sb-nav-link-icon">
-							<i class="fas fa-book-open"></i>
+							<i class="fas fa-table"></i>
 						</div> Đơn hàng
-					</a>
-					<a class="nav-link" href="/BookShop/charts">
-						<div class="sb-nav-link-icon">
-							<i class="fas fa-chart-area"></i>
-						</div> Charts
 					</a> 
 					<div class="sb-sidenav-menu-heading">CRUD</div>
 					<a class="nav-link collapsed" href="#" data-toggle="collapse"
 						data-target="#collapseLayouts" aria-expanded="false"
 						aria-controls="collapseLayouts">
 						<div class="sb-nav-link-icon">
-							<i class="fas fa-columns"></i>
+							<i class="fas fa-book-open"></i>
 						</div> Layouts
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
@@ -49,17 +44,15 @@
 					<div class="collapse" id="collapseLayouts"
 						aria-labelledby="headingOne" data-parent="#sidenavAccordion">
 						<nav class="sb-sidenav-menu-nested nav">
-							<a class="nav-link" href="layout-static.html">Static
-								Navigation</a> <a class="nav-link" href="layout-sidenav-light.html">Light
-								Sidenav</a>
+							<a class="nav-link" href="/BookShop/addBook">Thêm sách</a> <a class="nav-link" href="layout-sidenav-light.html">Sửa sách</a>
 						</nav>
 					</div>
 					<a class="nav-link collapsed" href="#" data-toggle="collapse"
 						data-target="#collapsePages" aria-expanded="false"
 						aria-controls="collapsePages">
 						<div class="sb-nav-link-icon">
-							<i class="fas fa-book-open"></i>
-						</div> Pages
+							<i class="fas fa-table"></i>
+						</div> Đơn hàng
 						<div class="sb-sidenav-collapse-arrow">
 							<i class="fas fa-angle-down"></i>
 						</div>
