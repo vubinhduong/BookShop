@@ -20,6 +20,7 @@ import model.Cart;
 import model.Comment;
 import model.User;
 import service.AdminService;
+import service.BillSevice;
 import service.BookService;
 import service.CommentService;
 import service.UserService;
@@ -31,6 +32,7 @@ public class HomeController {
 	UserService userService = new UserService();
 	CommentService commentService = new CommentService();
 	BookService bookService = new BookService();
+	BillSevice billService = new BillSevice();
 
 	@RequestMapping(value = "/homePage", method = RequestMethod.GET)
 	public ModelAndView homePage() {
@@ -80,6 +82,24 @@ public class HomeController {
 		List<Book> listGenreBook = new BookService().getBookGenre(genre);
 		mav.addObject("genreProduct", listGenreBook);
 		return mav;
+	}
+	
+	@RequestMapping(value = "/type", method = RequestMethod.GET)
+	public ModelAndView typePage(String type) {
+		ModelAndView mav = new ModelAndView("user/type");
+		if (type.equals("new")) {
+			List<Book> typeProduct = new BookService().getBoolNew();
+			mav.addObject("typeProduct", typeProduct);
+			return mav;
+		} else if (type.equals("hot")) {
+			List<Book> typeProduct = new BookService().getBookHot();
+			mav.addObject("typeProduct", typeProduct);
+			return mav;
+		} else {
+			List<Book> typeProduct = new BookService().getBookRandom();
+			mav.addObject("typeProduct", typeProduct);
+			return mav;
+		}
 	}
 
 	@RequestMapping(value = "/preview", method = RequestMethod.GET)
@@ -224,4 +244,14 @@ public class HomeController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/thanhtoan")
+	public ModelAndView thanhtoan(@RequestParam(value = "username") String username, HttpSession session){
+		List<Cart> listCart = (List<Cart>) session.getAttribute("listCart");
+		if (username != "") {
+			billService.addBill(username, listCart);
+		}
+		ModelAndView mav = cartPage();
+		return mav;
+	}
+	
 }

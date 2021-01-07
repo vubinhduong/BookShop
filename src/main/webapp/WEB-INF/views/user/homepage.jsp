@@ -173,13 +173,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">Xem tất cả</a>
+							<a href="/BookShop/type.htm?type=new">Xem tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
 				</div>
 				<div class="section group">
-				<c:forEach var="item" items="${newProduct}" begin="1" end="4" step="1">
+				<c:forEach var="item" items="${newProduct}" begin="0" end="3" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
@@ -213,13 +213,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">Xem tất cả</a>
+							<a href="/BookShop/type.htm?type=hot">Xem tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
 				</div>
 				<div class="section group">
-				<c:forEach var="item" items="${bestSellerProduct}" begin="1" end="4" step="1">
+				<c:forEach var="item" items="${bestSellerProduct}" begin="0" end="3" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>
@@ -252,13 +252,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="see">
 						<p>
-							<a href="#">Xem tất cả</a>
+							<a href="/BookShop/type.htm?type=random">Xem tất cả</a>
 						</p>
 					</div>
 					<div class="clear"></div>
 				</div>
 				<div class="section group">
-					<c:forEach var="item" items="${randomProduct}" begin="1" end="4" step="1">
+					<c:forEach var="item" items="${randomProduct}" begin="0" end="3" step="1">
 					<div class="grid_1_of_4 images_1_of_4">
 						<a href="/BookShop/preview.htm?bookId=${item.book_id}"><img src="<c:url value="${item.image}"/>"
 							alt="" /></a>

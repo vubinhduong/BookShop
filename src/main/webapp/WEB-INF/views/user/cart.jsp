@@ -39,19 +39,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript"
 	src="<c:url value="/resources/user/js/slides.min.jquery.js"/>"></script>
 <script>
-		$(function(){
-			$('#products').slides({
-				preload: true,
-				preloadImage: 'img/loading.gif',
-				effect: 'slide, fade',
-				crossfade: true,
-				slideSpeed: 350,
-				fadeSpeed: 500,
-				generateNextPrev: true,
-				generatePagination: false
-			});
+	$(function() {
+		$('#products').slides({
+			preload : true,
+			preloadImage : 'img/loading.gif',
+			effect : 'slide, fade',
+			crossfade : true,
+			slideSpeed : 350,
+			fadeSpeed : 500,
+			generateNextPrev : true,
+			generatePagination : false
 		});
-	</script>
+	});
+</script>
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+
 <style type="text/css">
 span {
 	display: inline #-block;
@@ -66,34 +84,44 @@ span {
 <body style="background-color: #c1bdba;">
 
 	<script type="text/javascript">
-	function showCart(id) {
-		if(confirm("Xác nhận xóa?")){
-		$.ajax({
-			type: "POST",
-			url : "deleteCart",
-			dataType: "json",
-			data: {
-				bookId: id
-			},
-			success : function(data) {			
-				var y = '';
-				
-				$.each(data, function(key,value) {
-					y = y + '<div class="wish-list" style="width: 80%; margin-left: 10%; height: 50px"> <div style="display: flex;align-items: center;"> <span style="width: 80px; text-align: center;">1</span> <span style="width: 150px; text-align: center;"><img style="max-height: 50px;" src="<c:url value="/resources/user/images/' + value['product']['image'] + '"/>" alt="learn more" /></span> <span style="width: 350px; text-align: center;">' + value['product']['name'] + '</span> <span style="width: 100px; text-align: center;">' + value['quantity'] + '</span> <span style="width: 200px; text-align: center;">' + value['product']['price'] + 'đ</span> <span class="z" style="width: 80px; text-align: center;"><p onclick="showCart(' + "'" + value['product']['book_id'] + "'" + ')">Xóa</p></span> </div> </div>';
-				});
-				
-							
-				
-				document.getElementById("cartDetail").innerHTML = y;
-				
-				
+		function showCart(id) {
+			if (confirm("Xác nhận xóa?")) {
+				$
+						.ajax({
+							type : "POST",
+							url : "deleteCart",
+							dataType : "json",
+							data : {
+								bookId : id
+							},
+							success : function(data) {
+								var y = '';
 
+								$
+										.each(
+												data,
+												function(key, value) {
+													y = y
+															+ '<div class="wish-list" style="width: 80%; margin-left: 10%; height: 50px"> <div style="display: flex;align-items: center;"> <span style="width: 80px; text-align: center;">1</span> <span style="width: 150px; text-align: center;"><img style="max-height: 50px;" src="<c:url value="/resources/user/images/' + value['product']['image'] + '"/>" alt="learn more" /></span> <span style="width: 350px; text-align: center;">'
+															+ value['product']['name']
+															+ '</span> <span style="width: 100px; text-align: center;">'
+															+ value['quantity']
+															+ '</span> <span style="width: 200px; text-align: center;">'
+															+ value['product']['price']
+															+ 'đ</span> <span class="z" style="width: 80px; text-align: center;"><p onclick="showCart('
+															+ "'"
+															+ value['product']['book_id']
+															+ "'"
+															+ ')">Xóa</p></span> </div> </div>';
+												});
+
+								document.getElementById("cartDetail").innerHTML = y;
+
+							}
+						});
 			}
-		});
-		}
-	};
-	
-</script>
+		};
+	</script>
 
 
 	<script
@@ -101,29 +129,29 @@ span {
 	<script src="../../../../m.servedby-buysellads.com/monetization.js"
 		type="text/javascript"></script>
 	<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
-  	}
-})();
-</script>
+		(function() {
+			if (typeof _bsa !== 'undefined' && _bsa) {
+				// format, zoneKey, segment:value, options
+				_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+			}
+		})();
+	</script>
 	<script>
-(function(){
-if(typeof _bsa !== 'undefined' && _bsa) {
-	// format, zoneKey, segment:value, options
-	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
-}
-})();
-</script>
+		(function() {
+			if (typeof _bsa !== 'undefined' && _bsa) {
+				// format, zoneKey, segment:value, options
+				_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+			}
+		})();
+	</script>
 	<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
-  	}
-})();
-</script>
+		(function() {
+			if (typeof _bsa !== 'undefined' && _bsa) {
+				// format, zoneKey, segment:value, options
+				_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+			}
+		})();
+	</script>
 	<!--<script>(function(v,d,o,ai){ai=d.createElement("script");ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, "//a.vdo.ai/core/w3layouts_V2/vdo.ai.js?vdo=34");</script>-->
 	<div id="codefund">
 		<!-- fallback content -->
@@ -131,21 +159,32 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-  gtag('config', 'UA-149859901-1');
-</script>
+		gtag('config', 'UA-149859901-1');
+	</script>
 
 	<script>
-     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-     ga('create', 'UA-149859901-1', 'demo.w3layouts.com');
-     ga('require', 'eventTracker');
-     ga('require', 'outboundLinkTracker');
-     ga('require', 'urlChangeTracker');
-     ga('send', 'pageview');
-   </script>
+		function tt() {
+			alert('Thanh toán thành công! Đơn hàng sẽ được giao trong 1 tuần tới!');
+		}
+	</script>
+
+	<script>
+		window.ga = window.ga || function() {
+			(ga.q = ga.q || []).push(arguments)
+		};
+		ga.l = +new Date;
+		ga('create', 'UA-149859901-1', 'demo.w3layouts.com');
+		ga('require', 'eventTracker');
+		ga('require', 'outboundLinkTracker');
+		ga('require', 'urlChangeTracker');
+		ga('send', 'pageview');
+	</script>
 
 	<div class="wrap" style="padding: 0px 20px; background-color: #fff;">
 		<jsp:include page="header.jsp"></jsp:include>
@@ -167,12 +206,15 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 				<div class="wish-list"
 					style="width: 80%; margin-left: 10%; height: 50px">
 					<div style="display: flex; align-items: center;">
-						<span style="width: 80px; text-align: center;">1</span>
-						<span style="width: 150px; text-align: center;"><img style="max-height: 50px;" src="<c:url value="${item.product.image}"/>" alt="learn more" /></span>
+						<span style="width: 80px; text-align: center;">1</span> <span
+							style="width: 150px; text-align: center;"><img
+							style="max-height: 50px;"
+							src="<c:url value="${item.product.image}"/>" alt="learn more" /></span>
 						<span style="width: 350px; text-align: center;">${item.product.name}</span>
 						<span style="width: 100px; text-align: center;">${item.quantity}</span>
-						<span style="width: 200px; text-align: center;">${item.product.price*(100-item.product.discount)/100*item.quantity} đ</span> 
-						<span class="z" style="width: 80px; text-align: center;"><a onclick="showCart('${item.product.book_id}')">Xóa</a></span>
+						<span style="width: 200px; text-align: center;">${item.product.price*(100-item.product.discount)/100*item.quantity}
+							đ</span> <span class="z" style="width: 80px; text-align: center;"><a
+							onclick="showCart('${item.product.book_id}')">Xóa</a></span>
 					</div>
 				</div>
 			</c:forEach>
@@ -182,15 +224,20 @@ if(typeof _bsa !== 'undefined' && _bsa) {
 			<h3 style="color: red;">Tổng tiền: ${totalAmount} đ</h3>
 		</div>
 		<br>
-			<button style="color: #fff; margin-left: 79%; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;" class="buttoncustom" >Thanh toán</button>
+		<form action="/BookShop/thanhtoan">
+			<input type="hidden" name="username" value="${sessionScope.logged.username}">
+			<input onclick="tt()" value="Thanh toán" type="submit" style="color: #fff; margin-left: 79%; font-size: 20px; background: red; font-weight: bold; padding: 10px 10px 10px 10px;">
+		</form>	
 		<br>
 		<br>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript">
-		$(document).ready(function() {			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
+		$(document).ready(function() {
+			$().UItoTop({
+				easingType : 'easeOutQuart'
+			});
+
 		});
 	</script>
 	<a href="#" id="toTop"><span id="toTopHover"> </span></a>
