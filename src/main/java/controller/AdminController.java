@@ -27,6 +27,14 @@ public class AdminController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/dataBill", method = RequestMethod.GET)
+	public ModelAndView dataBookBill() {
+		ModelAndView mav = new ModelAndView("admin/tables2");
+		List<Book> allBook = new BookService().getAllBook();
+		mav.addObject("allBook", allBook);
+		return mav;
+	}
+	
 	@RequestMapping(value = "/charts", method = RequestMethod.GET)
 	public ModelAndView chartsPage() {
 		ModelAndView mav = new ModelAndView("admin/charts");
