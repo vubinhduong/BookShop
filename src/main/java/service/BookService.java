@@ -86,13 +86,13 @@ public class BookService {
 
 	// trả về sách bán chạy
 	public List<Book> getBookHot() {
-		sql = "SELECT * FROM BOOK\r\n" + "ORDER BY PURCHASED DESC\r\n" + "LIMIT 20";
+		sql = "SELECT * FROM BOOK\r\n" + "ORDER BY PURCHASED DESC\r\n" + "LIMIT 30";
 		return getBook();
 	}
 
 	// trả về sách ngẫu nhiên
 	public List<Book> getBookRandom() {
-		sql = "SELECT * \r\n" + "FROM BOOK\r\n" + "ORDER BY RAND() LIMIT 20";
+		sql = "SELECT * \r\n" + "FROM BOOK\r\n" + "ORDER BY RAND() LIMIT 30";
 		return getBook();
 	}
 
@@ -160,5 +160,39 @@ public class BookService {
 				}
 		}
 	}
+	
+	public boolean checkBook(String bookId) {
+		List<Book> book = getAllBook();
+		for(Book i : book) {
+			if(i.getBook_id().equals(bookId))
+				return true;
+		}
+		return false;
+	}
+	
+	public void addBook(String bookId, String bookName, int pages, String NXB, int nam, 
+						int price, int discount, String image,String content) {
+		sql = "INSERT INTO book (book_id, Book_name, price, discount, pages, publisher, publishing_year, intro, image)\r\n" + 
+				" VALUES ('" + bookId + "','"+ bookName +"', '" + price + "', '"+ discount + "', '" + pages +"', '"+ NXB + "', '"+ nam +"', '"+ content +"', '"+ image +"')";
+    	Connection connection = JDBCConnection.getJDBCConnection();
+    	
+		try {
+			Statement st = connection.createStatement();
+			st.execute(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			if(connection != null)
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
+	
 
 }

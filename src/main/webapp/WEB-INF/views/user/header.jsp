@@ -37,7 +37,9 @@
 			</div>
 			<div class="cart">
 				<p>
-					<span><a href="/BookShop/cart">Giỏ hàng</a></span>
+					<span style="padding-right: 5px;"><a style="color: red;" href="/BookShop/cart">Giỏ hàng</a></span>
+					<span><a href="/BookShop/news"><img style="width: 30px;" src="<c:url value="/resources/user/images/cart.png"/>"
+											alt="learn more" /></a></span>
 				</p>
 			</div>
 			<script type="text/javascript">

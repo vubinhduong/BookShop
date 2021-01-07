@@ -192,14 +192,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 							</span> <br> <br> <br>
 							<div class="price">
+							<c:if test="${bookSelected.discount==0}">
+								<p>
+									<span>Giá:
+										${bookSelected.price*(100-bookSelected.discount)/100} đ</span> 
+								</p>
+							</c:if>
+							<c:if test="${bookSelected.discount!=0}">
 								<p>
 									<span>Giá:
 										${bookSelected.price*(100-bookSelected.discount)/100} đ</span> <span
 										style="font-size: 2em; color: #666; text-decoration: line-through; padding-left: 10px;">${bookSelected.price}đ</span>
 								</p>
-
-
-
+							</c:if>
+								
 							</div>
 							<div class="available" style="padding: 7px 0px"></div>
 							<div class="share-desc">

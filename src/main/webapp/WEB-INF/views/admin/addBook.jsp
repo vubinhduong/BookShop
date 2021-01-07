@@ -21,6 +21,13 @@
 	<style type="text/css">
 		
 	</style>
+	<script type="text/javascript">
+		function addBook() {
+			var x = document.getElementById("image").value;
+			alert('OK');
+			alert(x);
+		}
+	</script>
 </head>
 <body class="sb-nav-fixed">
 	<jsp:include page="topnav.jsp"></jsp:include>
@@ -39,35 +46,47 @@
 
 
 							<div class="form" style="">
-								<form>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+								<form action="">
+									<div style="width: 100%; height: 50px;">
+										<span style="float: left"> <h5>Mã sách:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input name="bookId" style="width: 100px;" type="text" > </span>
+										
+										<span style="float: left;  padding-left: 50px;"> <h5>Tên sách:</h5> </span>
+										<span style="padding-left: 20px;"> <input name="bookName" style="width: 363px;" type="text" > </span>
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+									<div style="width: 100%; height: 50px;">
+										<span style="float: left"> <h5>Số trang:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input name="pages" style="width: 100px;" type="text" > </span>
+										
+										<span style="float: left; padding-left: 50px;"> <h5>NXB:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input name="NXB" style="width: 398px;" type="text" > </span>
+
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+									<div style="width: 100%; height: 50px;">
+										
+										<span style="float: left"> <h5>Năm xuất bản:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input name="nam" style="width: 100px;" type="text" > </span>
+										
+										<span style="float: left;  padding-left: 50px;"> <h5>Giá:</h5> </span>
+										<span style="float:left; padding-left: 20px;"> <input name="price" style="width: 100px;" type="text" > </span>
+										
+										<span style="float: left;  padding-left: 50px;"> <h5>Giảm Giá:</h5> </span>
+										<span style="padding-left: 20px;"> <input name="discount" style="width: 100px;" type="text" > </span>
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+									
+									<div style="width: 100%; height: 50px;">
+										<span style="float: left;"> <h5>Ảnh:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input id="image" name="image" style="width: 317px;" type="file" > </span>
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+									
+									<div style="width: 100%; height: 50px;">
+										<span style="float: left"> <h5>Nội dung:</h5> </span>
+										<span style="float: left; padding-left: 20px;"> <input name="content" style="width: 605px;" type="text" > </span>
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
+									
+										<span style="float: left; padding-left: 20px;"> <input onclick="addBook()" name="submit" style="width: 605px;" type="submit" > </span>
 									</div>
-									<div>
-										<span style="float: left;"> <h5>Mã sách:</h5> </span>
-										<span> <input style="padding-left: 5%" type="text" > </span>
-									</div>
+									
 								</form>
 							</div>
 
