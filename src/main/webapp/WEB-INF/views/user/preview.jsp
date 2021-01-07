@@ -130,9 +130,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			function rate() {
 				alert('Cảm ơn đã góp ý!');
 			};
-			function comment() {
-				alert('Cảm ơn đã góp ý!');
-			}
 		</script>
 	</c:if>
 
@@ -261,7 +258,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="review">
 										<h4>Đánh giá sản phẩm</h4>
 										<form action="/BookShop/rate" method="get">
-											<input id="userRate" type="hidden" name="user" value="${sessionScope.logged.name}">
+											<input id="userRate" type="hidden" name="user" value="${sessionScope.logged.username}">
 											<input name="bookId" type="text"
 												style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
 												value="${bookSelected.book_id}"> 
@@ -278,7 +275,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="wish-list">
 												<form action="/BookShop/comment">
 													<div>
-														<input id="userComment" type="hidden" name="user" value="${sessionScope.logged.name}">
+														<input id="userComment" type="hidden" name="user" value="${sessionScope.logged.username}">
 														<input name="bookId" type="text"
 															style="background: #fff; border: none; color: #fff; padding: 0; width: 0px;"
 															value="${bookSelected.book_id}"> <input
